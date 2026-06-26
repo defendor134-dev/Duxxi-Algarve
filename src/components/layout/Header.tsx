@@ -60,8 +60,8 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-lg shadow-sporting-green/30 group-hover:shadow-sporting-green/50 transition-all duration-300 group-hover:scale-105 bg-white/90">
-                <Image src={siteLogo} alt="Directivo Algarve logo" width={48} height={48} className="object-contain" />
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-lg shadow-sporting-green/30 group-hover:shadow-sporting-green/50 transition-all duration-300 group-hover:scale-105 bg-white/90 flex items-center justify-center">
+                <Image src={siteLogo} alt="Directivo Algarve logo" width={48} height={48} className="object-contain w-full h-full p-1" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="font-heading font-bold text-lg md:text-xl text-sporting-dark dark:text-white leading-tight">

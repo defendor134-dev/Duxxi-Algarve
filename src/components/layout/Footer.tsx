@@ -51,8 +51,8 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="sm:col-span-2 lg:col-span-2">
               <Link href="/" className="inline-flex items-center gap-3 group mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/90 shadow-lg shadow-sporting-green/30">
-                  <Image src={siteLogo} alt="Directivo Algarve logo" width={48} height={48} className="w-full h-full object-contain" />
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/90 shadow-lg shadow-sporting-green/30 flex items-center justify-center">
+                  <Image src={siteLogo} alt="Directivo Algarve logo" width={48} height={48} className="object-contain w-full h-full p-1" />
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-lg leading-tight">
