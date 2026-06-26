@@ -5,7 +5,7 @@
 
 export const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Directivo Algarve - Claque Sporting CP";
 export const siteShortName = "Directivo Algarve";
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://projetoduxxialgarve.vercel.app";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://duxxialgarve.vercel.app";
 export const siteLogo = process.env.NEXT_PUBLIC_SITE_LOGO || "/site-images/logotipo.jpg";
 export const siteLogoPng = process.env.NEXT_PUBLIC_SITE_LOGO_PNG || "/site-images/logotipo.jpg";
 export const siteLogoMaskable = process.env.NEXT_PUBLIC_SITE_LOGO_MASKABLE || "/site-images/logotipo.jpg";
