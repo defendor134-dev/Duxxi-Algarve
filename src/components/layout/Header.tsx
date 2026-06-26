@@ -6,16 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import SearchModal from "@/components/ui/SearchModal";
-import { siteLogo } from "@/lib/site-config";
-
-const navItems = [
-  { label: "Início", href: "/" },
-  { label: "Jogos", href: "/jogos" },
-  { label: "Notícias", href: "/noticias" },
-  { label: "Transferências", href: "/transfers" },
-  { label: "Modalidades", href: "/modalidades" },
-  { label: "Plantel", href: "/plantel" },
-];
+import { siteLogo, siteShortName, navItems } from "@/lib/site-config";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,14 +61,14 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-lg shadow-sporting-green/30 group-hover:shadow-sporting-green/50 transition-all duration-300 group-hover:scale-105 bg-white/90">
-                <Image src={siteLogo} alt="Sporting CP logo" width={48} height={48} className="object-contain" />
+                <Image src={siteLogo} alt="Directivo Algarve logo" width={48} height={48} className="object-contain" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="font-heading font-bold text-lg md:text-xl text-sporting-dark dark:text-white leading-tight">
-                  Sporting CP
+                  {siteShortName}
                 </h1>
                 <p className="text-xs text-gray-500 dark:text-gray-400 -mt-0.5">
-                  Clube de Portugal
+                  Claque Sporting CP • Algarve
                 </p>
               </div>
             </Link>
@@ -102,7 +93,6 @@ export default function Header() {
 
             {/* Right side actions */}
             <div className="flex items-center gap-1 md:gap-2">
-              {/* Search Button */}
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="btn-ghost p-2 rounded-xl text-lg"
@@ -111,8 +101,6 @@ export default function Header() {
               >
                 🔍
               </button>
-
-              {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
                 className="btn-ghost p-2 rounded-xl text-lg"
@@ -121,32 +109,15 @@ export default function Header() {
               >
                 {isDarkMode ? "☀️" : "🌙"}
               </button>
-
-              {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="lg:hidden btn-ghost p-2 rounded-xl"
                 aria-label="Abrir menu"
               >
                 <div className="w-6 h-5 relative flex flex-col justify-between">
-                  <span
-                    className={cn(
-                      "block h-0.5 w-full bg-sporting-dark dark:bg-white rounded transition-all duration-300",
-                      isMenuOpen && "rotate-45 translate-y-[9px]"
-                    )}
-                  />
-                  <span
-                    className={cn(
-                      "block h-0.5 w-full bg-sporting-dark dark:bg-white rounded transition-all duration-300",
-                      isMenuOpen && "opacity-0"
-                    )}
-                  />
-                  <span
-                    className={cn(
-                      "block h-0.5 w-full bg-sporting-dark dark:bg-white rounded transition-all duration-300",
-                      isMenuOpen && "-rotate-45 -translate-y-[9px]"
-                    )}
-                  />
+                  <span className={cn("block h-0.5 w-full bg-sporting-dark dark:bg-white rounded transition-all duration-300", isMenuOpen && "rotate-45 translate-y-[9px]")} />
+                  <span className={cn("block h-0.5 w-full bg-sporting-dark dark:bg-white rounded transition-all duration-300", isMenuOpen && "opacity-0")} />
+                  <span className={cn("block h-0.5 w-full bg-sporting-dark dark:bg-white rounded transition-all duration-300", isMenuOpen && "-rotate-45 -translate-y-[9px]")} />
                 </div>
               </button>
             </div>
@@ -154,12 +125,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={cn(
-            "lg:hidden transition-all duration-300 overflow-hidden",
-            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          )}
-        >
+        <div className={cn("lg:hidden transition-all duration-300 overflow-hidden", isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0")}>
           <nav className="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 shadow-xl">
             <div className="container-sporting py-4 space-y-1">
               {navItems.map((item) => (
@@ -180,8 +146,6 @@ export default function Header() {
           </nav>
         </div>
       </header>
-
-      {/* Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );

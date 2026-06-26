@@ -2,13 +2,13 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sporting CP - Site Oficial",
-    short_name: "Sporting CP",
-    description: "Site oficial do Sporting Clube de Portugal",
+    name: "Directivo Algarve - Claque Sporting CP",
+    short_name: "Directivo Algarve",
+    description: "Claque oficial do Sporting Clube de Portugal no Algarve. Apoio, deslocações, convívios e paixão pelo Sporting.",
     start_url: "/",
     display: "standalone",
-    background_color: "#006847",
-    theme_color: "#006847",
+    background_color: "#1a1a2e",
+    theme_color: "#00833E",
     icons: [
       {
         src: "/icons/icon-192.png",

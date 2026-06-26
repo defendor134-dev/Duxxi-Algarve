@@ -1,0 +1,80 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { galleryAlbums, galleryPhotos } from "@/data/mockData";
+
+export default function GaleriaPage() {
+  const [activeAlbum, setActiveAlbum] = useState<string>("all");
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+
+  const filteredPhotos = activeAlbum === "all" ? galleryPhotos : galleryPhotos.filter(p => p.album === activeAlbum);
+
+  return (
+    <div className="pt-20">
+      {/* Hero */}
+      <section className="relative py-20 bg-gradient-to-br from-sporting-dark via-[#16213e] to-sporting-dark text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-1/3 w-80 h-80 bg-sporting-green rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-1/4 w-64 h-64 bg-sporting-green-light rounded-full blur-3xl" />
+        </div>
+        <div className="container-sporting relative z-10 text-center">
+          <span className="badge-green mb-3">📸 GALERIA</span>
+          <h1 className="text-4xl md:text-6xl font-heading font-black mb-4">Galeria Multimédia</h1>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+            Fotos e vídeos dos momentos mais marcantes da Directivo Algarve.
+          </p>
+        </div>
+      </section>
+
+      {/* Albums */}
+      <section className="py-12 bg-gray-50 dark:bg-gray-900">
+        <div className="container-sporting">
+          <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
+            <button onClick={() => setActiveAlbum("all")} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${activeAlbum === "all" ? "bg-sporting-green text-white" : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-sporting-green/10"}`}>
+              🖼️ Todas
+            </button>
+            {galleryAlbums.map((album) => (
+              <button key={album.id} onClick={() => setActiveAlbum(album.id)} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap flex items-center gap-2 ${activeAlbum === album.id ? "bg-sporting-green text-white" : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-sporting-green/10"}`}>
+                <span>{album.count} 📷</span> {album.title}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Grid */}
+      <section className="py-12 bg-white dark:bg-sporting-dark">
+        <div className="container-sporting">
+          {filteredPhotos.length > 0 ? (
+            <div className="gallery-grid">
+              {filteredPhotos.map((photo) => (
+                <div key={photo.id} className="gallery-item" onClick={() => setSelectedPhoto(photo.src)}>
+                  <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+                  <div className="gallery-overlay">
+                    <span className="text-white text-lg">🔍</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-4xl mb-4">📸</p>
+              <p className="text-gray-500 dark:text-gray-400">Nenhuma foto neste álbum ainda.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {selectedPhoto && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={() => setSelectedPhoto(null)}>
+          <button onClick={() => setSelectedPhoto(null)} className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 z-10">&times;</button>
+          <div className="relative max-w-5xl max-h-[85vh] w-full h-full">
+            <Image src={selectedPhoto} alt="Foto" fill className="object-contain" sizes="100vw" />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

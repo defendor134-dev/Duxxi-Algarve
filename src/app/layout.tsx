@@ -6,77 +6,50 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import CookieConsent from "@/components/ui/CookieConsent";
 import ErrorBoundary from "@/components/ui/ErrorBoundary";
-import { siteName, siteUrl, siteLogoPng, siteOgImage } from "@/lib/site-config";
+import { siteName, siteUrl, siteLogoPng, siteOgImage, claqueInfo } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: {
     default: siteName,
-    template: "%s | Sporting CP",
+    template: `%s | ${claqueInfo.fullName}`,
   },
-  description:
-    "Projeto criado por um fã do Sporting Clube de Portugal. Acompanha todas as novidades, jogos, resultados, classificações e informações sobre o clube.",
+  description: claqueInfo.description,
   keywords: [
-    "Sporting CP",
-    "Sporting",
+    "Directivo Algarve",
+    "Claque Sporting CP",
+    "Sporting Algarve",
     "Sporting Clube de Portugal",
+    "Claque Algarvia",
     "Futebol",
-    "Liga Portugal",
-    "Futsal",
-    "Andebol",
-    "Atletismo",
+    "Sporting",
     "Leões",
-    "José Alvalade",
-    "Pavilhão João Rocha",
-    "Liga dos Campeões",
-    "Taça de Portugal",
+    "Apoio ao Sporting",
+    "Deslocações Sporting",
+    "Sporting CP Algarve",
   ],
-  authors: [{ name: "Fã do Sporting CP" }],
-  creator: "Fã do Sporting CP",
-  publisher: "Fã do Sporting CP",
+  authors: [{ name: claqueInfo.fullName }],
+  creator: claqueInfo.fullName,
+  publisher: claqueInfo.fullName,
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
     locale: "pt_PT",
-    siteName: "Sporting CP",
-    title: `${siteName}`,
-    description:
-      "Site criado por um fã do Sporting Clube de Portugal. Acompanha todas as novidades!",
+    siteName: claqueInfo.fullName,
+    title: siteName,
+    description: claqueInfo.description,
     url: siteUrl,
     images: [
-      {
-        url: siteOgImage,
-        width: 1200,
-        height: 630,
-        alt: `${siteName}`,
-      },
-      {
-        url: siteLogoPng,
-        width: 512,
-        height: 512,
-        alt: `${siteName} logo`,
-      },
+      { url: siteOgImage, width: 1200, height: 630, alt: siteName },
+      { url: siteLogoPng, width: 512, height: 512, alt: `${siteName} logo` },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName}`,
-    description: "Site criado por um fã do Sporting Clube de Portugal.",
+    title: siteName,
+    description: claqueInfo.description,
     images: [siteOgImage],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "google-site-verification-code", // Replace with actual code
-  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
   category: "sports",
 };
 
@@ -86,82 +59,33 @@ export const viewport = {
   maximumScale: 5,
 };
 
-// JSON-LD Structured Data for SEO
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SportsOrganization",
-  name: "Sporting Clube de Portugal",
-  alternateName: "Sporting CP",
-  url: "https://sporting-cp.vercel.app",
+  name: claqueInfo.fullName,
+  alternateName: claqueInfo.shortName,
+  url: siteUrl,
   logo: `${siteUrl}${siteLogoPng}`,
-  foundingDate: "1906-07-01",
-  founder: {
-    "@type": "Person",
-    name: "José Alvalade",
-  },
-  location: {
-    "@type": "Place",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Lisboa",
-      addressCountry: "PT",
-    },
-  },
-  arena: {
-    "@type": "StadiumOrArena",
-    name: "Estádio José Alvalade",
-    capacity: 50095,
-  },
-  sport: "Football",
-  memberOf: [
-    {
-      "@type": "SportsOrganization",
-      name: "Liga Portugal",
-    },
-  ],
-  sameAs: [
-    "https://www.facebook.com/SportingCP",
-    "https://www.instagram.com/sportingcp",
-    "https://twitter.com/Sporting_CP",
-    "https://www.youtube.com/user/SportingCP",
-  ],
+  foundingDate: `${claqueInfo.founded}-07-01`,
+  description: claqueInfo.description,
+  areaServed: "Algarve, Portugal",
+  sport: "Football (Soccer)",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-PT" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <meta name="theme-color" content="#006847" />
-        <meta name="msapplication-TileColor" content="#006847" />
-        <meta name="application-name" content="Sporting CP" />
-        <meta name="apple-mobile-web-app-title" content="Sporting CP" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <link rel="manifest" href="/manifest.webmanifest" />
-        <Script
-          type="module"
-          src="https://widgets.api-sports.io/3.1.0/widgets.js"
-          strategy="beforeInteractive"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logo-maskable.png" />
+        <Script id="json-ld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(jsonLd)}
+        </Script>
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className="antialiased">
         <ErrorBoundary>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
           <ScrollToTop />
           <CookieConsent />

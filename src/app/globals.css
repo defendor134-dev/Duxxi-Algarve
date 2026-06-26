@@ -3,18 +3,20 @@
 @tailwind utilities;
 
 /* ============================================================
-   Sporting CP Website - Global Styles
+   Directivo Algarve - Global Styles
+   Claque oficial do Sporting Clube de Portugal no Algarve
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 @layer base {
   :root {
-    --sporting-green: #006847;
+    --sporting-green: #00833E;
     --sporting-green-light: #00BFA5;
-    --sporting-gold: #FFD700;
+    --sporting-gold: #C4A747;
     --sporting-dark: #1a1a2e;
     --sporting-white: #f8fafc;
+    --claque-red: #DC2626;
   }
 
   html {
@@ -33,20 +35,16 @@
     @apply bg-sporting-green text-white;
   }
 
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-
   ::-webkit-scrollbar-track {
     @apply bg-gray-100 dark:bg-gray-800;
   }
-
   ::-webkit-scrollbar-thumb {
     @apply bg-sporting-green rounded-full;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-sporting-green-light;
   }
@@ -56,6 +54,9 @@
   /* ---- CONTAINERS ---- */
   .container-sporting {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   /* ---- BUTTONS ---- */
@@ -83,39 +84,47 @@
            transition-all duration-200 ease-in-out;
   }
 
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-sporting-gold text-white font-semibold rounded-lg 
+           hover:bg-yellow-500 hover:shadow-lg hover:shadow-yellow-500/25 
+           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg 
+           hover:bg-white hover:text-sporting-dark transition-all duration-300;
+  }
+
   /* ---- CARDS ---- */
   .card {
     @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg 
            hover:shadow-xl transition-all duration-300 ease-in-out 
            border border-gray-100 dark:border-gray-700;
   }
-
   .card-hover {
     @apply card transform hover:-translate-y-1 hover:shadow-2xl;
   }
-
   .card-glass {
     @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg 
            border border-white/20 dark:border-gray-700/30;
+  }
+  .card-dark {
+    @apply bg-sporting-dark/80 backdrop-blur-lg rounded-2xl shadow-lg border border-white/10;
   }
 
   /* ---- BADGES ---- */
   .badge {
     @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
   }
-
   .badge-green {
     @apply badge bg-sporting-green/10 text-sporting-green dark:bg-sporting-green/20 dark:text-sporting-green-light;
   }
-
   .badge-gold {
     @apply badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
   }
-
   .badge-red {
     @apply badge bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300;
   }
-
   .badge-gray {
     @apply badge bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300;
   }
@@ -124,11 +133,6 @@
   .section-title {
     @apply text-3xl md:text-4xl font-heading font-bold text-sporting-dark dark:text-white;
   }
-
-  .section-subtitle {
-    @apply text-lg text-gray-600 dark:text-gray-400 mt-2;
-  }
-
   .section-divider {
     @apply w-20 h-1 bg-sporting-green rounded-full mt-4;
   }
@@ -139,63 +143,42 @@
     transform: translateY(20px);
     transition: all 0.6s ease-out;
   }
-
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* ---- LIVE INDICATOR ---- */
-  .live-indicator {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 bg-red-500 text-white text-xs font-bold uppercase rounded-full;
-  }
-
-  .live-dot {
-    @apply w-2 h-2 bg-white rounded-full animate-pulse;
   }
 
   /* ---- GRADIENTS ---- */
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-sporting-green to-sporting-green-light;
   }
-
   .gradient-bg {
     @apply bg-gradient-to-r from-sporting-green via-sporting-green-light to-sporting-green;
   }
+  .gradient-bg-dark {
+    @apply bg-gradient-to-br from-sporting-dark via-[#16213e] to-sporting-dark;
+  }
 
-  /* ---- HERO SECTION ---- */
+  /* ---- HERO ---- */
   .hero-overlay {
     @apply absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent;
+  }
+  .hero-overlay-center {
+    @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent;
   }
 
   /* ---- MATCH CARD ---- */
   .match-card {
     @apply card p-6 flex flex-col items-center text-center;
   }
-
   .match-score {
     @apply text-2xl md:text-3xl font-bold font-heading;
   }
-
   .match-team {
     @apply text-sm font-semibold mt-2;
   }
-
   .match-time {
     @apply text-xs text-gray-500 dark:text-gray-400 mt-1;
-  }
-
-  /* ---- SQUAD GRID ---- */
-  .player-card {
-    @apply card-hover p-4 text-center relative overflow-hidden;
-  }
-
-  .player-number {
-    @apply absolute top-2 left-2 text-4xl font-black text-sporting-green/20 dark:text-sporting-green-light/20;
-  }
-
-  .player-image {
-    @apply w-32 h-32 object-cover rounded-full mx-auto border-4 border-sporting-green/20;
   }
 
   /* ---- NAVIGATION ---- */
@@ -203,17 +186,14 @@
     @apply text-gray-600 dark:text-gray-300 hover:text-sporting-green dark:hover:text-sporting-green-light 
            font-medium transition-colors duration-200 relative;
   }
-
   .nav-link-active {
     @apply text-sporting-green dark:text-sporting-green-light font-semibold;
   }
-
   .nav-link::after {
     content: '';
     @apply absolute bottom-0 left-0 w-0 h-0.5 bg-sporting-green dark:bg-sporting-green-light 
            transition-all duration-300;
   }
-
   .nav-link:hover::after,
   .nav-link-active::after {
     @apply w-full;
@@ -223,7 +203,6 @@
   .news-card {
     @apply card-hover overflow-hidden;
   }
-
   .news-image {
     @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
   }
@@ -232,36 +211,89 @@
   .standings-table {
     @apply w-full text-sm;
   }
-
   .standings-table th {
     @apply px-4 py-3 text-left font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider text-xs;
   }
-
   .standings-table td {
     @apply px-4 py-3 border-t border-gray-100 dark:border-gray-700;
   }
-
   .standings-table tr:hover td {
     @apply bg-gray-50 dark:bg-gray-700/50;
   }
 
-  /* ---- LOADING SKELETON ---- */
+  /* ---- TIMELINE ---- */
+  .timeline-line {
+    @apply absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-sporting-green/30 transform md:-translate-x-1/2;
+  }
+  .timeline-dot {
+    @apply absolute left-4 md:left-1/2 w-4 h-4 bg-sporting-green rounded-full border-4 border-white dark:border-sporting-dark 
+           transform -translate-x-1/2 shadow-md;
+  }
+  .timeline-card {
+    @apply relative pl-12 md:pl-0 md:w-1/2;
+  }
+  .timeline-card-left {
+    @apply md:pr-12 md:ml-0;
+  }
+  .timeline-card-right {
+    @apply md:pl-12 md:ml-auto;
+  }
+
+  /* ---- FORMS ---- */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg 
+           bg-white dark:bg-gray-800 text-gray-900 dark:text-white
+           focus:ring-2 focus:ring-sporting-green focus:border-transparent 
+           outline-none transition-all duration-200;
+  }
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5;
+  }
+  .form-error {
+    @apply text-red-500 text-xs mt-1;
+  }
+  .form-select {
+    @apply form-input appearance-none cursor-pointer;
+  }
+  .form-textarea {
+    @apply form-input resize-none min-h-[120px];
+  }
+
+  /* ---- GALLERY ---- */
+  .gallery-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+  }
+  .gallery-item {
+    @apply relative overflow-hidden rounded-2xl cursor-pointer;
+  }
+  .gallery-item img {
+    @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
+  }
+  .gallery-overlay {
+    @apply absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+           flex items-center justify-center;
+  }
+
+  /* ---- SOCIO CARD ---- */
+  .socio-card {
+    @apply card-dark p-8 text-center relative overflow-hidden;
+  }
+  .socio-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sporting-green via-sporting-gold to-sporting-green;
+  }
+
+  /* ---- LOADING ---- */
   .skeleton {
     @apply bg-gray-200 dark:bg-gray-700 rounded animate-pulse;
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
+  .text-balance { text-wrap: balance; }
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
 }

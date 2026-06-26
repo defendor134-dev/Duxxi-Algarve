@@ -1,189 +1,156 @@
 // ============================================================
-// Sporting CP - Mock Data for initial development & fallback
-// Real data will come from external APIs
+// Directivo Algarve - Mock Data
+// Claque oficial do Sporting Clube de Portugal no Algarve
 // ============================================================
 
 import { Match, NewsArticle, Player, Standing, Modality } from "@/types";
 
+// ---- CLAQUE DATA ----
+export const claqueTimeline = [
+  { year: 2019, title: "Fundação da Directivo Algarve", description: "Um grupo de amigos sportinguistas do Algarve decide criar uma claque oficial para apoiar o Sporting CP nas deslocações ao sul do país." },
+  { year: 2020, title: "Primeira deslocação em grupo", description: "Organizamos a primeira viagem oficial para apoiar o Sporting no Estádio do Algarve, com mais de 50 membros." },
+  { year: 2021, title: "Reconhecimento oficial", description: "A Directivo Algarve é reconhecida como claque oficial do Sporting Clube de Portugal pela direção do clube." },
+  { year: 2022, title: "Expansão para todo o Algarve", description: "A claque expande a sua presença para todos os concelhos do Algarve, com núcleos em Faro, Portimão, Albufeira e Olhão." },
+  { year: 2023, title: "100 membros ativos", description: "Atingimos a marca de 100 sócios ativos, consolidando-nos como a maior claque sportinguista do sul do país." },
+  { year: 2024, title: "Deslocações nacionais e internacionais", description: "Organizamos deslocações para todos os estádios nacionais e acompanhamos o Sporting na Champions League." },
+  { year: 2025, title: "Novos projetos e comunidade", description: "Lançamos iniciativas solidárias, convívios mensais e reforçamos a presença digital da claque." },
+];
+
+export const claqueStats = [
+  { value: "200+", label: "Membros Ativos" },
+  { value: "50+", label: "Deslocações" },
+  { value: "7", label: "Anos de História" },
+  { value: "16", label: "Concelhos do Algarve" },
+];
+
+export const claqueBenefits = [
+  { icon: "🎫", title: "Acesso Prioritário", description: "Garantia de lugar nas deslocações organizadas pela claque" },
+  { icon: "👕", title: "Merch Oficial", description: "Descontos exclusivos em merchandise da claque" },
+  { icon: "🎉", title: "Eventos e Convívios", description: "Participação em festas, jantares e encontros de membros" },
+  { icon: "📱", title: "Grupo Exclusivo", description: "Acesso ao grupo privado de WhatsApp e redes sociais" },
+  { icon: "🏆", title: "Sorteios e Prémios", description: "Participação em sorteios de bilhetes e material desportivo" },
+  { icon: "🗳️", title: "Voz Ativa", description: "Direito a voto nas decisões importantes da claque" },
+];
+
+export const claqueLeaders = [
+  { name: "João Silva", role: "Presidente", photo: "" },
+  { name: "Rui Santos", role: "Vice-Presidente", photo: "" },
+  { name: "Ana Martins", role: "Tesoureira", photo: "" },
+  { name: "Pedro Costa", role: "Secretário", photo: "" },
+  { name: "Marta Ferreira", role: "Logística e Deslocações", photo: "" },
+  { name: "Carlos Pereira", role: "Comunicação e Redes", photo: "" },
+];
+
+// ---- GALLERY ----
+export const galleryAlbums = [
+  { id: "epoca-2025-26", title: "Época 2025/26", cover: "/site-images/imagem5.jpg", count: 24 },
+  { id: "epoca-2024-25", title: "Época 2024/25", cover: "/site-images/imagem6.jpg", count: 42 },
+  { id: "deslocacoes", title: "Deslocações", cover: "/site-images/imagem7.jpg", count: 36 },
+  { id: "convivios", title: "Convívios", cover: "/site-images/imagem8.jpg", count: 18 },
+  { id: "coreografias", title: "Coreografias", cover: "/site-images/imagem9.jpg", count: 15 },
+];
+
+export const galleryPhotos = [
+  { id: "1", src: "/site-images/imagem5.jpg", alt: "Jogo no Estádio José Alvalade", album: "epoca-2025-26" },
+  { id: "2", src: "/site-images/imagem6.jpg", alt: "Deslocação ao Porto", album: "epoca-2025-26" },
+  { id: "3", src: "/site-images/imagem7.jpg", alt: "Convívio de Verão", album: "convivios" },
+  { id: "4", src: "/site-images/imagem8.jpg", alt: "Coreografia no Algarve", album: "coreografias" },
+  { id: "5", src: "/site-images/imagem9.jpg", alt: "Viagem a Braga", album: "deslocacoes" },
+  { id: "6", src: "/site-images/background.jpg", alt: "Grupo de membros", album: "epoca-2024-25" },
+];
+
+// ---- DESLOCACOES ----
+export const deslocacoesData = [
+  {
+    id: "1",
+    jogo: "Sporting CP vs FC Porto",
+    data: "2026-06-28",
+    hora: "20:30",
+    estadio: "Estádio José Alvalade",
+    localPartida: "Faro - Parque de Estacionamento do Algarve Shopping",
+    horaPartida: "15:30",
+    preco: "25€",
+    vagas: 50,
+    vagasOcupadas: 32,
+    estado: "aberto",
+  },
+  {
+    id: "2",
+    jogo: "SL Benfica vs Sporting CP",
+    data: "2026-09-15",
+    hora: "18:00",
+    estadio: "Estádio da Luz",
+    localPartida: "Albufeira - Rotunda do Relógio",
+    horaPartida: "12:00",
+    preco: "30€",
+    vagas: 40,
+    vagasOcupadas: 40,
+    estado: "lotado",
+  },
+  {
+    id: "3",
+    jogo: "Sporting CP vs SC Braga",
+    data: "2026-07-05",
+    hora: "18:00",
+    estadio: "Estádio José Alvalade",
+    localPartida: "Portimão - Praça da República",
+    horaPartida: "13:00",
+    preco: "20€",
+    vagas: 35,
+    vagasOcupadas: 15,
+    estado: "aberto",
+  },
+  {
+    id: "4",
+    jogo: "Vitória SC vs Sporting CP",
+    data: "2026-10-20",
+    hora: "20:00",
+    estadio: "Estádio D. Afonso Henriques",
+    localPartida: "Faro - Algarve Shopping",
+    horaPartida: "11:00",
+    preco: "35€",
+    vagas: 30,
+    vagasOcupadas: 30,
+    estado: "lotado",
+  },
+  {
+    id: "5",
+    jogo: "Sporting CP vs SL Benfica",
+    data: "2026-11-10",
+    hora: "21:00",
+    estadio: "Estádio José Alvalade",
+    localPartida: "Olhão - Mercado Municipal",
+    horaPartida: "16:00",
+    preco: "25€",
+    vagas: 45,
+    vagasOcupadas: 28,
+    estado: "aberto",
+  },
+];
+
+// ---- MATCHES ----
 export const mockMatches: Match[] = [
-  {
-    id: "1",
-    competition: "Liga Portugal Betclic",
-    modality: "Futebol",
-    homeTeam: "Sporting CP",
-    awayTeam: "FC Porto",
-    homeScore: 2,
-    awayScore: 1,
-    date: "2026-06-28",
-    time: "20:30",
-    stadium: "Estádio José Alvalade",
-    status: "scheduled",
-    round: "Jornada 34",
-  },
-  {
-    id: "2",
-    competition: "Liga Portugal Betclic",
-    modality: "Futebol",
-    homeTeam: "SL Benfica",
-    awayTeam: "Sporting CP",
-    homeScore: 1,
-    awayScore: 2,
-    date: "2026-06-22",
-    time: "20:00",
-    stadium: "Estádio da Luz",
-    status: "finished",
-    round: "Jornada 30",
-  },
-  {
-    id: "3",
-    competition: "Liga Portugal Betclic",
-    modality: "Futebol",
-    homeTeam: "Sporting CP",
-    awayTeam: "SC Braga",
-    date: "2026-07-05",
-    time: "18:00",
-    stadium: "Estádio José Alvalade",
-    status: "scheduled",
-    round: "Jornada 35",
-  },
-  {
-    id: "4",
-    competition: "Liga Placard (Futsal)",
-    modality: "Futsal",
-    homeTeam: "Sporting CP",
-    awayTeam: "SL Benfica",
-    homeScore: 4,
-    awayScore: 3,
-    date: "2026-06-20",
-    time: "19:00",
-    stadium: "Pavilhão João Rocha",
-    status: "finished",
-  },
-  {
-    id: "5",
-    competition: "Andebol 1",
-    modality: "Andebol",
-    homeTeam: "Sporting CP",
-    awayTeam: "FC Porto",
-    date: "2026-07-01",
-    time: "17:00",
-    stadium: "Pavilhão João Rocha",
-    status: "scheduled",
-  },
-  {
-    id: "6",
-    competition: "Liga Portugal Betclic",
-    modality: "Futebol",
-    homeTeam: "Sporting CP",
-    awayTeam: "Rio Ave FC",
-    homeScore: 3,
-    awayScore: 0,
-    date: "2026-06-15",
-    time: "20:30",
-    stadium: "Estádio José Alvalade",
-    status: "finished",
-  },
-  {
-    id: "7",
-    competition: "Taça de Portugal",
-    modality: "Futebol",
-    homeTeam: "Sporting CP",
-    awayTeam: "SL Benfica",
-    date: "2026-07-10",
-    time: "21:00",
-    stadium: "Estádio José Alvalade",
-    status: "scheduled",
-  },
-  {
-    id: "8",
-    competition: "Liga Portugal Betclic",
-    modality: "Futebol",
-    homeTeam: "Vitória SC",
-    awayTeam: "Sporting CP",
-    date: "2026-07-12",
-    time: "18:00",
-    stadium: "Estádio D. Afonso Henriques",
-    status: "scheduled",
-  },
+  { id: "1", competition: "Liga Portugal Betclic", modality: "Futebol", homeTeam: "Sporting CP", awayTeam: "FC Porto", homeScore: 2, awayScore: 1, date: "2026-06-28", time: "20:30", stadium: "Estádio José Alvalade", status: "scheduled", round: "Jornada 34" },
+  { id: "2", competition: "Liga Portugal Betclic", modality: "Futebol", homeTeam: "SL Benfica", awayTeam: "Sporting CP", homeScore: 1, awayScore: 2, date: "2026-06-22", time: "20:00", stadium: "Estádio da Luz", status: "finished", round: "Jornada 30" },
+  { id: "3", competition: "Liga Portugal Betclic", modality: "Futebol", homeTeam: "Sporting CP", awayTeam: "SC Braga", date: "2026-07-05", time: "18:00", stadium: "Estádio José Alvalade", status: "scheduled", round: "Jornada 35" },
+  { id: "4", competition: "Liga Placard (Futsal)", modality: "Futsal", homeTeam: "Sporting CP", awayTeam: "SL Benfica", homeScore: 4, awayScore: 3, date: "2026-06-20", time: "19:00", stadium: "Pavilhão João Rocha", status: "finished" },
+  { id: "5", competition: "Andebol 1", modality: "Andebol", homeTeam: "Sporting CP", awayTeam: "FC Porto", date: "2026-07-01", time: "17:00", stadium: "Pavilhão João Rocha", status: "scheduled" },
+  { id: "6", competition: "Liga Portugal Betclic", modality: "Futebol", homeTeam: "Sporting CP", awayTeam: "Rio Ave FC", homeScore: 3, awayScore: 0, date: "2026-06-15", time: "20:30", stadium: "Estádio José Alvalade", status: "finished" },
+  { id: "7", competition: "Taça de Portugal", modality: "Futebol", homeTeam: "Sporting CP", awayTeam: "SL Benfica", date: "2026-07-10", time: "21:00", stadium: "Estádio José Alvalade", status: "scheduled" },
+  { id: "8", competition: "Liga Portugal Betclic", modality: "Futebol", homeTeam: "Vitória SC", awayTeam: "Sporting CP", date: "2026-07-12", time: "18:00", stadium: "Estádio D. Afonso Henriques", status: "scheduled" },
 ];
 
+// ---- NEWS ----
 export const mockNews: NewsArticle[] = [
-  {
-    id: "1",
-    title: "Sporting vence clássico e assume liderança isolada",
-    description:
-      "O Sporting CP venceu o FC Porto por 2-1 no Estádio José Alvalade e isolou-se na liderança do campeonato.",
-    url: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80",
-    source: "Sporting CP",
-    publishedAt: "2026-06-24T10:30:00Z",
-    category: "Futebol",
-    isFeatured: true,
-  },
-  {
-    id: "2",
-    title: "Futsal: Sporting garante vaga na final do campeonato",
-    description:
-      "A equipa de futsal do Sporting CP venceu o Benfica por 4-3 num jogo emocionante.",
-    url: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1577223625816-7540f056285b?w=800&q=80",
-    source: "Sporting CP",
-    publishedAt: "2026-06-23T15:00:00Z",
-    category: "Futsal",
-  },
-  {
-    id: "3",
-    title: "Andebol: Sporting prepara final four da Taça",
-    description:
-      "A equipa de andebol do Sporting CP está nos finalistas da Taça de Portugal.",
-    url: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80",
-    source: "Record",
-    publishedAt: "2026-06-22T09:15:00Z",
-    category: "Andebol",
-  },
-  {
-    id: "4",
-    title: "Gyökeres eleito melhor marcador da Liga",
-    description:
-      "O avançado sueco do Sporting CP foi eleito o melhor marcador da temporada.",
-    url: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=800&q=80",
-    source: "A Bola",
-    publishedAt: "2026-06-21T14:00:00Z",
-    category: "Futebol",
-    isFeatured: true,
-  },
-  {
-    id: "5",
-    title: "Formação: Sporting Sub-19 vence torneio internacional",
-    description:
-      "A equipa sub-19 do Sporting CP conquistou o torneio internacional de Algarve.",
-    url: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80",
-    source: "O Jogo",
-    publishedAt: "2026-06-20T11:00:00Z",
-    category: "Formação",
-  },
-  {
-    id: "6",
-    title: "Atletismo: Sporting domina campeonato nacional",
-    description:
-      "Os atletas do Sporting CP conquistaram 15 medalhas no campeonato nacional.",
-    url: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1461896836934-8faf68aa5c6a?w=800&q=80",
-    source: "Sporting CP",
-    publishedAt: "2026-06-19T16:30:00Z",
-    category: "Atletismo",
-  },
+  { id: "1", title: "Directivo Algarve marca presença no clássico em Alvalade", description: "Mais de 40 membros da Directivo Algarve estiveram presentes no Estádio José Alvalade para apoiar o Sporting na vitória sobre o FC Porto.", url: "#", imageUrl: "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-25T10:30:00Z", category: "Claque", isFeatured: true },
+  { id: "2", title: "Inscrições abertas para deslocação a Alvalade", description: "Estão abertas as inscrições para a próxima deslocação a Lisboa. Garante o teu lugar!", url: "#", imageUrl: "https://images.unsplash.com/photo-1577223625816-7540f056285b?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-23T15:00:00Z", category: "Deslocações" },
+  { id: "3", title: "Convívio de Verão da Directivo Algarve", description: "No próximo sábado, vai realizar-se o convívio anual de verão da claque. Haverá churrasco, música e muito espírito sportinguista.", url: "#", imageUrl: "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-22T09:15:00Z", category: "Eventos" },
+  { id: "4", title: "Sporting vence e isola-se na liderança", description: "O Sporting CP venceu o Rio Ave por 3-0 e isolou-se na liderança do campeonato. A Directivo Algarve marcou presença.", url: "#", imageUrl: "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=800&q=80", source: "Record", publishedAt: "2026-06-21T14:00:00Z", category: "Sporting", isFeatured: true },
+  { id: "5", title: "Nova camisola da claque já disponível", description: "Já está disponível a nova camisola da Directivo Algarve para a época 2026/27. Encomenda a tua!", url: "#", imageUrl: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-20T11:00:00Z", category: "Merch" },
+  { id: "6", title: "Assembleia Geral da Directivo Algarve", description: "Convocamos todos os sócios para a Assembleia Geral Ordinária que se realizará no próximo mês.", url: "#", imageUrl: "https://images.unsplash.com/photo-1461896836934-8faf68aa5c6a?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-19T16:30:00Z", category: "Claque" },
 ];
 
+// ---- SQUAD ----
 export const mockSquad: Player[] = [
   { id: "1", name: "Franco Israel", number: 1, position: "Guarda-Redes", nationality: "Uruguai", age: 26, height: 186, weight: 78 },
   { id: "2", name: "Antonio Adán", number: 12, position: "Guarda-Redes", nationality: "Espanha", age: 38, height: 190, weight: 82 },
@@ -203,6 +170,7 @@ export const mockSquad: Player[] = [
   { id: "16", name: "Paulinho", number: 20, position: "Avançado", nationality: "Portugal", age: 32, height: 187, weight: 80 },
 ];
 
+// ---- STANDINGS ----
 export const mockStandings: Standing[] = [
   { position: 1, team: "Sporting CP", played: 30, won: 24, drawn: 4, lost: 2, goalsFor: 78, goalsAgainst: 22, goalDifference: 56, points: 76 },
   { position: 2, team: "SL Benfica", played: 30, won: 22, drawn: 5, lost: 3, goalsFor: 70, goalsAgainst: 25, goalDifference: 45, points: 71 },
@@ -212,67 +180,11 @@ export const mockStandings: Standing[] = [
   { position: 6, team: "Rio Ave FC", played: 30, won: 12, drawn: 8, lost: 10, goalsFor: 40, goalsAgainst: 42, goalDifference: -2, points: 44 },
 ];
 
+// ---- MODALITIES ----
 export const mockModalities: Modality[] = [
-  {
-    id: "futebol",
-    name: "Futebol",
-    description: "A modalidade rainha do Sporting CP. Com uma história rica e cheia de glórias, a equipa principal compete na Liga Portugal Betclic e nas competições europeias.",
-    imageUrl: "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80",
-    icon: "⚽",
-    category: "main",
-    achievements: [
-      { year: 2024, title: "Campeão Nacional", description: "Conquista da Liga Portugal" },
-      { year: 2021, title: "Campeão Nacional", description: "Liga Portugal" },
-      { year: 2019, title: "Taça de Portugal", description: "Conquista da Taça" },
-      { year: 2021, title: "Taça da Liga", description: "Vencedor" },
-    ],
-  },
-  {
-    id: "futsal",
-    name: "Futsal",
-    description: "O Sporting CP é uma potência do futsal nacional e europeu, com múltiplos títulos de campeão nacional e presenças na final da UEFA Futsal Champions League.",
-    imageUrl: "https://images.unsplash.com/photo-1577223625816-7540f056285b?w=800&q=80",
-    icon: "⚡",
-    category: "main",
-    achievements: [
-      { year: 2024, title: "Campeão Nacional", description: "Liga Placard" },
-      { year: 2023, title: "Supertaça", description: "Vencedor" },
-      { year: 2021, title: "Finalista Europeu", description: "UEFA Futsal Champions League" },
-    ],
-  },
-  {
-    id: "andebol",
-    name: "Andebol",
-    description: "O andebol do Sporting CP tem crescido imenso nos últimos anos, afirmando-se como uma das melhores equipas do país.",
-    imageUrl: "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80",
-    icon: "🤾",
-    category: "main",
-    achievements: [
-      { year: 2024, title: "Taça de Portugal", description: "Vencedor" },
-      { year: 2023, title: "Finalista do Campeonato", description: "Vice-campeão nacional" },
-    ],
-  },
-  {
-    id: "atletismo",
-    name: "Atletismo",
-    description: "O Sporting CP tem uma das mais prestigiadas secções de atletismo do país, com atletas de classe mundial em várias disciplinas.",
-    imageUrl: "https://images.unsplash.com/photo-1461896836934-8faf68aa5c6a?w=800&q=80",
-    icon: "🏃",
-    category: "main",
-    achievements: [
-      { year: 2024, title: "Campeão Nacional", description: "Campeonato Nacional de Clubes" },
-      { year: 2023, title: "Campeão Nacional", description: "Campeonato Nacional" },
-    ],
-  },
-  {
-    id: "basquetebol",
-    name: "Basquetebol",
-    description: "O basquetebol do Sporting CP compete nos campeonatos nacionais, formando jovens talentos.",
-    imageUrl: "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80",
-    icon: "🏀",
-    category: "other",
-    achievements: [
-      { year: 2023, title: "Subida à Liga", description: "Promoção ao principal escalão" },
-    ],
-  },
+  { id: "futebol", name: "Futebol", description: "A modalidade rainha do Sporting CP. Com uma história rica e cheia de glórias.", imageUrl: "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80", icon: "⚽", category: "main", achievements: [{ year: 2024, title: "Campeão Nacional", description: "Liga Portugal" }, { year: 2021, title: "Campeão Nacional", description: "Liga Portugal" }] },
+  { id: "futsal", name: "Futsal", description: "O Sporting CP é uma potência do futsal nacional e europeu.", imageUrl: "https://images.unsplash.com/photo-1577223625816-7540f056285b?w=800&q=80", icon: "⚡", category: "main", achievements: [{ year: 2024, title: "Campeão Nacional", description: "Liga Placard" }] },
+  { id: "andebol", name: "Andebol", description: "O andebol do Sporting CP tem crescido imenso nos últimos anos.", imageUrl: "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80", icon: "🤾", category: "main", achievements: [{ year: 2024, title: "Taça de Portugal", description: "Vencedor" }] },
+  { id: "atletismo", name: "Atletismo", description: "O Sporting CP tem uma das mais prestigiadas secções de atletismo.", imageUrl: "https://images.unsplash.com/photo-1461896836934-8faf68aa5c6a?w=800&q=80", icon: "🏃", category: "main", achievements: [{ year: 2024, title: "Campeão Nacional", description: "Campeonato Nacional de Clubes" }] },
+  { id: "basquetebol", name: "Basquetebol", description: "O basquetebol do Sporting CP compete nos campeonatos nacionais.", imageUrl: "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80", icon: "🏀", category: "other", achievements: [{ year: 2023, title: "Subida à Liga", description: "Promoção" }] },
 ];
