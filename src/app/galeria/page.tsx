@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { galleryAlbums, galleryPhotos } from "@/data/mockData";
+import { galleryPhotos } from "@/data/mockData";
 
 export default function GaleriaPage() {
-  const [activeAlbum, setActiveAlbum] = useState<string>("all");
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
-
-  const filteredPhotos = activeAlbum === "all" ? galleryPhotos : galleryPhotos.filter(p => p.album === activeAlbum);
+  const photos = galleryPhotos;
 
   return (
     <div className="pt-20">
@@ -36,28 +34,12 @@ export default function GaleriaPage() {
         </div>
       </section>
 
-      {/* Albums */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900">
-        <div className="container-sporting">
-          <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
-            <button onClick={() => setActiveAlbum("all")} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${activeAlbum === "all" ? "bg-sporting-green text-white" : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-sporting-green/10"}`}>
-              🖼️ Todas
-            </button>
-            {galleryAlbums.map((album) => (
-              <button key={album.id} onClick={() => setActiveAlbum(album.id)} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap flex items-center gap-2 ${activeAlbum === album.id ? "bg-sporting-green text-white" : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-sporting-green/10"}`}>
-                <span>{album.count} 📷</span> {album.title}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Grid */}
       <section className="py-12 bg-white dark:bg-sporting-dark">
         <div className="container-sporting">
-          {filteredPhotos.length > 0 ? (
+          {photos.length > 0 ? (
             <div className="gallery-grid">
-              {filteredPhotos.map((photo) => (
+              {photos.map((photo) => (
                 <div key={photo.id} className="gallery-item" onClick={() => setSelectedPhoto(photo.src)}>
                   <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
                   <div className="gallery-overlay">
