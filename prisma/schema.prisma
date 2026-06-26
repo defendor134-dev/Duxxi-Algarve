@@ -61,3 +61,41 @@ model Match {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Deslocacao {
+  id            String   @id @default(cuid())
+  jogo          String
+  data          String
+  hora          String
+  estadio       String
+  localPartida  String
+  horaPartida   String
+  preco         String
+  vagas         Int
+  vagasOcupadas Int      @default(0)
+  estado        String   @default("aberto")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model NewsArticle {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  imageUrl    String
+  category    String
+  isFeatured  Boolean  @default(false)
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
