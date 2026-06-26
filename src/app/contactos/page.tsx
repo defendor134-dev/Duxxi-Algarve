@@ -28,21 +28,12 @@ export default function ContactosPage() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-sporting-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl">📧</span>
+                    <span className="text-xl">📸</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sporting-dark dark:text-white">Email</h3>
-                    <a href={`mailto:${claqueInfo.contact.email}`} className="text-sporting-green hover:underline">{claqueInfo.contact.email}</a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-sporting-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl">📱</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sporting-dark dark:text-white">WhatsApp</h3>
-                    <p className="text-gray-500 dark:text-gray-400">Grupo exclusivo para sócios e interessados</p>
-                    <a href={claqueInfo.social.whatsapp} className="text-sporting-green hover:underline" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+                    <h3 className="font-semibold text-sporting-dark dark:text-white">Instagram</h3>
+                    <p className="text-gray-500 dark:text-gray-400">Envia-nos uma mensagem privada para te inscreveres ou tirares dúvidas</p>
+                    <a href={claqueInfo.contact.instagram} className="text-sporting-green hover:underline" target="_blank" rel="noopener noreferrer">@duxxialgarve</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

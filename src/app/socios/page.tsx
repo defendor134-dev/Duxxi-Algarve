@@ -61,9 +61,8 @@ export default function SociosPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Sócio Simpatizante", price: "10€", periodo: "ano", features: ["Acesso ao grupo WhatsApp", "Newsletter exclusiva", "Descontos em merch", "Participação em eventos"] },
-              { name: "Sócio Efetivo", price: "25€", periodo: "ano", popular: true, features: ["Tudo do plano anterior", "Prioridade em deslocações", "Camisola da claque", "Voto nas decisões", "Sorteios exclusivos"] },
-              { name: "Sócio Patrono", price: "50€", periodo: "ano", features: ["Tudo do plano anterior", "Nome no site", "Jantar anual com direção", "Kit completo de boas-vindas", "Desconto em bilhetes"] },
+              { name: "Novo Sócio", price: "30€", periodo: "inscrição", popular: true, features: ["Acesso ao grupo WhatsApp", "Newsletter exclusiva", "Descontos em merch", "Participação em eventos", "Camisola da claque", "Voto nas decisões"] },
+              { name: "Renovação", price: "15€", periodo: "ano", features: ["Mantém todos os benefícios", "Prioridade em deslocações", "Participação em eventos", "Sorteios exclusivos"] },
             ].map((plan) => (
               <div key={plan.name} className={`relative ${plan.popular ? "scale-105" : ""}`}>
                 {plan.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-sporting-gold text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">🔥 Popular</div>}
@@ -90,65 +89,22 @@ export default function SociosPage() {
         </div>
       </section>
 
-      {/* Formulário de Inscrição */}
+      {/* PDF de Inscrição */}
       <section className="py-16 bg-white dark:bg-sporting-dark" id="inscricao">
         <div className="container-narrow">
           <div className="text-center mb-12">
-            <h2 className="section-title">Formulário de Inscrição</h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-2">Preenche os dados e entraremos em contacto</p>
+            <h2 className="section-title">Ficha de Inscrição</h2>
+            <p className="text-gray-500 dark:text-gray-400 mt-2">Descarrega o formulário de inscrição e envia-nos por mensagem</p>
             <div className="flex justify-center mt-3"><div className="section-divider" /></div>
           </div>
-          <div className="max-w-2xl mx-auto">
-            <div className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="form-label">Nome Completo</label>
-                  <input type="text" className="form-input" placeholder="O teu nome" />
-                </div>
-                <div>
-                  <label className="form-label">Data de Nascimento</label>
-                  <input type="date" className="form-input" />
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="form-label">Email</label>
-                  <input type="email" className="form-input" placeholder="teu@email.com" />
-                </div>
-                <div>
-                  <label className="form-label">Telemóvel</label>
-                  <input type="tel" className="form-input" placeholder="+351 9XXXXXXXX" />
-                </div>
-              </div>
-              <div>
-                <label className="form-label">Concelho do Algarve</label>
-                <select className="form-select">
-                  <option>Faro</option><option>Olhão</option><option>Loulé</option><option>Albufeira</option>
-                  <option>Portimão</option><option>Lagos</option><option>Tavira</option><option>São Brás</option>
-                  <option>Silves</option><option>Lagoa</option><option>Monchique</option><option>Vila do Bispo</option>
-                  <option>Aljezur</option><option>Castro Marim</option><option>Vila Real de Santo António</option>
-                </select>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="form-label">Plano Pretendido</label>
-                  <select className="form-select">
-                    <option>Sócio Simpatizante (10€/ano)</option>
-                    <option>Sócio Efetivo (25€/ano)</option>
-                    <option>Sócio Patrono (50€/ano)</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="form-label">Nº de Sócio Sporting CP (opcional)</label>
-                  <input type="text" className="form-input" placeholder="Se tiveres" />
-                </div>
-              </div>
-              <div>
-                <label className="form-label">Como conheceste a Directivo Algarve?</label>
-                <textarea className="form-textarea" placeholder="Redes sociais, amigos, estádio..." />
-              </div>
-              <button className="btn-primary w-full justify-center text-lg py-4">🚀 Enviar Inscrição</button>
-              <p className="text-xs text-gray-500 text-center">Após envio, a direção entrará em contacto para confirmar a adesão e indicar os dados de pagamento.</p>
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="card-hover p-8">
+              <div className="text-6xl mb-4">📄</div>
+              <h3 className="text-xl font-heading font-bold text-sporting-dark dark:text-white mb-2">Ficha de Sócio - Directivo Algarve</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">Descarrega o PDF, preenche e envia-nos por mensagem privada no Instagram.</p>
+              <a href="/site-images/socio-duxxi.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+                📥 Descarregar Ficha de Inscrição
+              </a>
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ export const claqueInfo = {
     whatsapp: "https://wa.me/351XXXXXXXXX",
   },
   contact: {
-    email: "directivoalgarve@gmail.com",
+    instagram: "https://www.instagram.com/duxxialgarve/",
     phone: "+351 XXX XXX XXX",
   },
 };
