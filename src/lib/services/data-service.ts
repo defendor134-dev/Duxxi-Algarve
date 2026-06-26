@@ -69,8 +69,8 @@ export async function getMatches(params?: {
             m.homeTeam.toLowerCase().includes(q) ||
             m.awayTeam.toLowerCase().includes(q) ||
             m.competition.toLowerCase().includes(q) ||
-            m.stadium.toLowerCase().includes(q) ||
-            m.round.toLowerCase().includes(q)
+            (m.stadium?.toLowerCase().includes(q) ?? false) ||
+            (m.round?.toLowerCase().includes(q) ?? false)
         );
       }
       if (params?.limit && params.limit > 0) {
