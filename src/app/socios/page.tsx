@@ -118,7 +118,7 @@ export default function SociosPage() {
           <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
               { icon: "📱", title: "MBWay", desc: "Paga por MBWay para o número da claque" },
-              { icon: "🏦", title: "Transferência", desc: "IBAN: PT50 0000 0000 0000 0000 0000 0" },
+              { icon: "🏦", title: "Transferência", desc: "IBAN: PT50 0045 6425 4024 8748 4371 3" },
               { icon: "💵", title: "Dinheiro", desc: "Podes pagar em mão a um elemento da direção" },
             ].map((m) => (
               <div key={m.title} className="card-hover p-6">

@@ -38,6 +38,7 @@ export const claqueInfo = {
   contact: {
     instagram: "https://www.instagram.com/duxxialgarve/",
     phone: "+351 XXX XXX XXX",
+    iban: "PT50 0045 6425 4024 8748 4371 3",
   },
 };
 

@@ -27,6 +27,15 @@ export default function GaleriaPage() {
         </div>
       </section>
 
+      {/* Instagram Link */}
+      <section className="py-8 bg-white dark:bg-sporting-dark">
+        <div className="container-sporting text-center">
+          <a href="https://www.instagram.com/duxxialgarve/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+            📸 Ver mais fotos no Instagram @duxxialgarve
+          </a>
+        </div>
+      </section>
+
       {/* Albums */}
       <section className="py-12 bg-gray-50 dark:bg-gray-900">
         <div className="container-sporting">
