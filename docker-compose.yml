@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    image: sporting-cp-fan-site:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sportingcp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
+    driver: local

@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Sporting CP Website - Global Styles
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+@layer base {
+  :root {
+    --sporting-green: #006847;
+    --sporting-green-light: #00BFA5;
+    --sporting-gold: #FFD700;
+    --sporting-dark: #1a1a2e;
+    --sporting-white: #f8fafc;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 dark:bg-sporting-dark dark:text-gray-100 font-sans transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  ::selection {
+    @apply bg-sporting-green text-white;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sporting-green rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sporting-green-light;
+  }
+}
+
+@layer components {
+  /* ---- CONTAINERS ---- */
+  .container-sporting {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ---- BUTTONS ---- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-sporting-green text-white font-semibold rounded-lg 
+           hover:bg-sporting-green-light hover:shadow-lg hover:shadow-sporting-green/25 
+           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-sporting-green focus:ring-offset-2
+           dark:focus:ring-offset-sporting-dark;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-sporting-green text-sporting-green 
+           font-semibold rounded-lg hover:bg-sporting-green hover:text-white 
+           hover:shadow-lg hover:shadow-sporting-green/25 
+           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-sporting-green focus:ring-offset-2
+           dark:focus:ring-offset-sporting-dark dark:border-sporting-green-light dark:text-sporting-green-light
+           dark:hover:bg-sporting-green-light dark:hover:text-sporting-dark;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-gray-600 dark:text-gray-300 
+           hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg 
+           transition-all duration-200 ease-in-out;
+  }
+
+  /* ---- CARDS ---- */
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg 
+           hover:shadow-xl transition-all duration-300 ease-in-out 
+           border border-gray-100 dark:border-gray-700;
+  }
+
+  .card-hover {
+    @apply card transform hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  .card-glass {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg 
+           border border-white/20 dark:border-gray-700/30;
+  }
+
+  /* ---- BADGES ---- */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+  }
+
+  .badge-green {
+    @apply badge bg-sporting-green/10 text-sporting-green dark:bg-sporting-green/20 dark:text-sporting-green-light;
+  }
+
+  .badge-gold {
+    @apply badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300;
+  }
+
+  /* ---- SECTION TITLES ---- */
+  .section-title {
+    @apply text-3xl md:text-4xl font-heading font-bold text-sporting-dark dark:text-white;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-600 dark:text-gray-400 mt-2;
+  }
+
+  .section-divider {
+    @apply w-20 h-1 bg-sporting-green rounded-full mt-4;
+  }
+
+  /* ---- ANIMATIONS ---- */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- LIVE INDICATOR ---- */
+  .live-indicator {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 bg-red-500 text-white text-xs font-bold uppercase rounded-full;
+  }
+
+  .live-dot {
+    @apply w-2 h-2 bg-white rounded-full animate-pulse;
+  }
+
+  /* ---- GRADIENTS ---- */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sporting-green to-sporting-green-light;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-sporting-green via-sporting-green-light to-sporting-green;
+  }
+
+  /* ---- HERO SECTION ---- */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent;
+  }
+
+  /* ---- MATCH CARD ---- */
+  .match-card {
+    @apply card p-6 flex flex-col items-center text-center;
+  }
+
+  .match-score {
+    @apply text-2xl md:text-3xl font-bold font-heading;
+  }
+
+  .match-team {
+    @apply text-sm font-semibold mt-2;
+  }
+
+  .match-time {
+    @apply text-xs text-gray-500 dark:text-gray-400 mt-1;
+  }
+
+  /* ---- SQUAD GRID ---- */
+  .player-card {
+    @apply card-hover p-4 text-center relative overflow-hidden;
+  }
+
+  .player-number {
+    @apply absolute top-2 left-2 text-4xl font-black text-sporting-green/20 dark:text-sporting-green-light/20;
+  }
+
+  .player-image {
+    @apply w-32 h-32 object-cover rounded-full mx-auto border-4 border-sporting-green/20;
+  }
+
+  /* ---- NAVIGATION ---- */
+  .nav-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-sporting-green dark:hover:text-sporting-green-light 
+           font-medium transition-colors duration-200 relative;
+  }
+
+  .nav-link-active {
+    @apply text-sporting-green dark:text-sporting-green-light font-semibold;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-sporting-green dark:bg-sporting-green-light 
+           transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    @apply card-hover overflow-hidden;
+  }
+
+  .news-image {
+    @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
+  }
+
+  /* ---- STANDINGS TABLE ---- */
+  .standings-table {
+    @apply w-full text-sm;
+  }
+
+  .standings-table th {
+    @apply px-4 py-3 text-left font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider text-xs;
+  }
+
+  .standings-table td {
+    @apply px-4 py-3 border-t border-gray-100 dark:border-gray-700;
+  }
+
+  .standings-table tr:hover td {
+    @apply bg-gray-50 dark:bg-gray-700/50;
+  }
+
+  /* ---- LOADING SKELETON ---- */
+  .skeleton {
+    @apply bg-gray-200 dark:bg-gray-700 rounded animate-pulse;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

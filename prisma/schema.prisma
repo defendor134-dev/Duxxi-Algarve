@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql" // You can also use "sqlite", "mysql", etc.
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Player {
+  id          String   @id
+  apiId       Int      @unique // The ID from the external API
+  name        String
+  number      Int
+  position    String
+  nationality String
+  age         Int
+  height      Int
+  weight      Int
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Standing {
+  id             String   @id @default(cuid())
+  position       Int      @unique
+  team           String
+  played         Int
+  won            Int
+  drawn          Int
+  lost           Int
+  goalsFor       Int
+  goalsAgainst   Int
+  goalDifference Int
+  points         Int
+  logo           String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Match {
+  id          String   @id
+  apiId       Int      @unique
+  competition String
+  modality    String
+  homeTeam    String
+  awayTeam    String
+  homeScore   Int?
+  awayScore   Int?
+  date        DateTime
+  time        String
+  stadium     String
+  status      String
+  round       String
+  homeLogo    String
+  awayLogo    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
