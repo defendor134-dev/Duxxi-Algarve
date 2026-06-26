@@ -99,10 +99,10 @@
   .card {
     @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg 
            hover:shadow-xl transition-all duration-300 ease-in-out 
-           border border-gray-100 dark:border-gray-700;
+           border-2 border-gray-100 dark:border-gray-700;
   }
   .card-hover {
-    @apply card transform hover:-translate-y-1 hover:shadow-2xl;
+    @apply card transform hover:-translate-y-1 hover:shadow-2xl hover:border-sporting-green;
   }
   .card-glass {
     @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg 
