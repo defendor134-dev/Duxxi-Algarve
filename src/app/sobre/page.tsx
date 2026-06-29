@@ -34,7 +34,7 @@ export default function SobrePage() {
           <div className="space-y-6 text-gray-500 text-sm font-sans leading-relaxed max-w-3xl mx-auto">
             <p>
               O <strong className="text-white">Directivo Ultras XXI (DUXXI)</strong> nasceu a <strong className="text-ultra-green-bright">17 de maio de 2002</strong>, 
-              fruto de uma rutura interna na claque Juventude Leonina. Liderado na sua génese por Miguel d'Almada 
+              fruto de uma rutura interna na claque Juventude Leonina. Liderado na sua génese por Miguel d&#39;Almada 
               (então membro da direção da Juve Leo), o grupo rapidamente se consolidou como a segunda maior claque do Sporting, 
               distinguindo-se pela originalidade dos seus cânticos e pela forte identidade visual e coreográfica.
             </p>
