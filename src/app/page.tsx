@@ -72,51 +72,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ============================
-          NEXT MATCH — ULTRA
-          ============================ */}
-      <section className="py-20 bg-ultra-dark">
-        <div className="container-ultra">
-          {nextMatch && (
-            <div className="text-center mb-12">
-              <span className="badge-ultra-green mb-4">PRÓXIMA BATALHA</span>
-              <h2 className="section-title-ultra">{nextMatch.competition}</h2>
-              <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
-            </div>
-          )}
-          {nextMatch && (
-            <div className="max-w-2xl mx-auto">
-              <div className="card-ultra p-10 md:p-14 text-center border-ultra-green/20 glow-green">
-                <div className="flex items-center justify-center gap-2 text-gray-600 font-heading font-semibold text-xs uppercase tracking-wider mb-8">
-                  <span>{formatDateShort(nextMatch.date)}</span>
-                  <span className="w-4 h-[1px] bg-ultra-gray" />
-                  <span>{formatTime(nextMatch.time)}</span>
-                </div>
-                <div className="grid grid-cols-3 gap-6 items-center mb-8">
-                  <div className="text-right">
-                    <p className="text-lg md:text-2xl font-heading font-black text-white uppercase">{nextMatch.homeTeam}</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="match-vs-ultra mx-auto">
-                      <span>VS</span>
-                    </div>
-                  </div>
-                  <div className="text-left">
-                    <p className="text-lg md:text-2xl font-heading font-black text-white uppercase">{nextMatch.awayTeam}</p>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-600 font-heading font-semibold uppercase tracking-wider mb-2">{nextMatch.stadium}</p>
-                {nextMatch.round && <p className="text-[10px] font-heading font-bold text-ultra-green-bright uppercase tracking-[0.2em] mb-6">{nextMatch.round}</p>}
-                <div className="mt-8">
-                  <Link href="/deslocacoes" className="btn-ultra-outline text-xs px-8 py-3">
-                    VER DESLOCAÇÕES
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* ============================
           QUEM SOMOS — ULTRA
