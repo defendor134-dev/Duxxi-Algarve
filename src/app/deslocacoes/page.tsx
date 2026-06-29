@@ -36,16 +36,16 @@ export default function DeslocacoesPage() {
       <section className="py-20 bg-black">
         <div className="container-ultra">
           <div className="grid md:grid-cols-2 gap-3 max-w-4xl mx-auto">
-            <Link href="/deslocacoes/alvalade" className="card-ultra p-8 text-center border-ultra-green/20 hover:border-ultra-green-bright transition-colors">
+            <a href={claqueInfo.contact.instagram} target="_blank" rel="noopener noreferrer" className="card-ultra p-8 text-center border-ultra-green/20 hover:border-ultra-green-bright transition-colors">
               <div className="text-4xl mb-4">🏟️</div>
               <h3 className="text-2xl font-heading font-black text-white mb-2">JOGOS EM ALVALADE</h3>
               <p className="text-xs text-gray-600 font-sans">Deslocações ao Estádio José Alvalade para apoiar o Sporting em casa.</p>
-            </Link>
-            <Link href="/deslocacoes/aways" className="card-ultra p-8 text-center border-ultra-green/20 hover:border-ultra-green-bright transition-colors">
+            </a>
+            <a href={claqueInfo.contact.instagram} target="_blank" rel="noopener noreferrer" className="card-ultra p-8 text-center border-ultra-green/20 hover:border-ultra-green-bright transition-colors">
               <div className="text-4xl mb-4">✈️</div>
               <h3 className="text-2xl font-heading font-black text-white mb-2">AWAYS</h3>
               <p className="text-xs text-gray-600 font-sans">Deslocações fora de casa, por todo o país e Europa.</p>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
