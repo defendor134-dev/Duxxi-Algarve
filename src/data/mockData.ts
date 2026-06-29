@@ -7,7 +7,7 @@ import { Match, NewsArticle, Player, Standing, Modality } from "@/types";
 
 // ---- CLAQUE DATA ----
 export const claqueTimeline = [
-  { year: 2002, title: "Fundação do Directivo Ultras XXI", description: "A 17 de maio de 2002 nasce o Directivo Ultras XXI (DUXXI). O grupo começa no topo Norte do antigo Estádio José Alvalade, deslocando-se mais tarde para o sector A18 do topo Sul do novo estádio." },
+  { year: 2002, title: "Fundação do Directivo Ultras XXI", description: "A 17 de maio de 2002 nasce o Directivo Ultras XXI (DUXXI). O grupo começa no topo Norte do antigo Estádio José Alvalade, deslocando-se mais tarde para o sector A-17 da Curva Norte do novo estádio." },
   { year: 2010, title: "Nascimento do núcleo do Algarve", description: "No início da década de 2010, sportinguistas do Algarve com ligação ao DUXXI começam a organizar-se como núcleo regional. O Directivo Algarve dá os primeiros passos como polo de apoio no sul do país." },
   { year: 2019, title: "Estruturação do Directivo Algarve", description: "O núcleo algarvio consolida-se como referência regional, organizando deslocações regulares a Alvalade e a todo o país. A presença nos jogos do Sporting no Algarve torna-se constante." },
   { year: 2022, title: "Expansão e presença nacional", description: "O Directivo Algarve marca presença em todos os estádios nacionais e começa a acompanhar o Sporting nas competições europeias. O núcleo torna-se um dos polos mais ativos do DUXXI." },
