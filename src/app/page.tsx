@@ -1,15 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { formatDateShort, formatTime } from "@/lib/utils";
 import { siteHeroBg, claqueInfo } from "@/lib/site-config";
-import { getFeaturedNews, getLatestNews, getNextMatch, getRecentResults, getStandings } from "@/lib/services/data-service";
+import { getFeaturedNews, getLatestNews, getNextMatch, getStandings } from "@/lib/services/data-service";
 import { claqueStats } from "@/data/mockData";
 
 export default async function HomePage() {
-  const [nextMatch, recentResults, standings, featuredNews, latestNews] = await Promise.all([
+  const [nextMatch, standings, featuredNews, latestNews] = await Promise.all([
     getNextMatch(),
-    getRecentResults(3),
     getStandings(),
     getFeaturedNews(),
     getLatestNews(3),
@@ -132,16 +130,16 @@ export default async function HomePage() {
               <h2 className="text-4xl md:text-6xl font-heading font-black text-white uppercase tracking-tight mb-8">
                 Directivo<br />Algarve
               </h2>
-          <p className="text-gray-500 text-base leading-relaxed mb-6 font-sans">
-            <strong className="text-white">O Directivo Algarve</strong> é o núcleo regional do 
-            <strong className="text-ultra-green-bright"> Directivo Ultras XXI</strong> no sul do país.
-            Com o lema <strong className="text-white">Coerência, Honra e Fidelidade</strong>, 
-            estendemos a mentalidade Ultra a todo o Algarve.
-          </p>
-          <p className="text-gray-600 text-sm leading-relaxed mb-10 font-sans">
-            Percorremos quilómetros para apoiar o Sporting de norte a sul do país e pela Europa fora. 
-            Apoiamos ativamente todas as modalidades do clube e organizamos ações de solidariedade social na região.
-          </p>
+              <p className="text-gray-500 text-base leading-relaxed mb-6 font-sans">
+                <strong className="text-white">O Directivo Algarve</strong> é o núcleo regional do 
+                <strong className="text-ultra-green-bright"> Directivo Ultras XXI</strong> no sul do país.
+                Com o lema <strong className="text-white">Coerência, Honra e Fidelidade</strong>, 
+                estendemos a mentalidade Ultra a todo o Algarve.
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed mb-10 font-sans">
+                Percorremos quilómetros para apoiar o Sporting de norte a sul do país e pela Europa fora. 
+                Apoiamos ativamente todas as modalidades do clube e organizamos ações de solidariedade social na região.
+              </p>
               <Link href="/sobre" className="btn-ultra">
                 SABER MAIS
               </Link>
@@ -178,7 +176,7 @@ export default async function HomePage() {
             {featuredNews && (
               <div className="news-card-ultra row-span-2 border-ultra-green/20">
                 <div className="relative overflow-hidden h-64 md:h-96">
-                  <Image src={featuredNews.imageUrl} alt="" fill className="news-image-ultra object-cover" />
+                  <img src={featuredNews.imageUrl} alt="" className="news-image-ultra object-cover w-full h-full" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <span className="badge-ultra-green mb-3 inline-block">{featuredNews.category}</span>
@@ -195,7 +193,7 @@ export default async function HomePage() {
               <div key={article.id} className="news-card-ultra">
                 <div className="flex flex-col sm:flex-row">
                   <div className="sm:w-48 h-48 sm:h-auto overflow-hidden relative">
-                    <Image src={article.imageUrl} alt="" fill className="news-image-ultra object-cover" />
+                    <img src={article.imageUrl} alt="" className="news-image-ultra object-cover w-full h-full" />
                   </div>
                   <div className="flex-1 p-6">
                     <span className="badge-ultra-green text-[10px] mb-3 inline-block">{article.category}</span>
