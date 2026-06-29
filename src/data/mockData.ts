@@ -24,7 +24,7 @@ export const claqueStats = [
 ];
 
 export const claqueBenefits = [
-  { title: "AMOR AO CLUBE", description: "O verdadeiro benefício de pertencer a uma claque ultra é sentir o amor incondicional pelo Sporting Clube de Portugal. Somos leão até morrer." },
+  { title: "AMOR AO CLUBE", description: "O verdadeiro benefício de pertencer a uma claque ultra é sentir o amor incondicional pelo Sporting Clube de Portugal. Coerência, honra e fidelidade — eis a nossa mentalidade." },
   { title: "UNIÃO", description: "Fazer parte de algo maior que nós. A Directivo Algarve é uma família sportinguista onde todos se apoiam dentro e fora dos estádios." },
   { title: "VOZ ATIVA", description: "Direito a voto nas decisões importantes da claque. A tua opinião conta para definir o rumo do Directivo Algarve." },
   { title: "EVENTOS E CONVÍVIOS", description: "Participação em festas, jantares e encontros de membros. O espírito sportinguista vive-se dentro e fora do estádio." },
