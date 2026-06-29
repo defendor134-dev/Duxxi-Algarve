@@ -39,7 +39,7 @@ export default function SobrePage() {
               distinguindo-se pela originalidade dos seus cânticos e pela forte identidade visual e coreográfica.
             </p>
             <p>
-              Atualmente sediado no <strong className="text-white">sector A18</strong> da bancada Sul do Estádio José Alvalade, 
+              Atualmente sediado no <strong className="text-white">sector A17</strong> da Curva Norte do Estádio José Alvalade, 
               o DUXXI é reconhecido como um dos grupos ultra mais organizados e fiéis do país. 
               A sua mística estende-se a todo o território nacional através de núcleos regionais — e o sul é representado 
               pelo <strong className="text-white">Directivo Algarve</strong>.
