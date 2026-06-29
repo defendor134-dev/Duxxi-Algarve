@@ -11,47 +11,45 @@ export default function GaleriaPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-sporting-dark via-[#16213e] to-sporting-dark text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-1/3 w-80 h-80 bg-sporting-green rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-1/4 w-64 h-64 bg-sporting-green-light rounded-full blur-3xl" />
-        </div>
-        <div className="container-sporting relative z-10 text-center">
-          <span className="badge-green mb-3">📸 GALERIA</span>
-          <h1 className="text-4xl md:text-6xl font-heading font-black mb-4">Galeria Multimédia</h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+      <section className="relative py-24 bg-black text-white overflow-hidden border-b border-ultra-gray">
+        <div className="absolute inset-0 ultra-stripe opacity-20" />
+        <div className="container-ultra relative z-10 text-center">
+          <span className="badge-ultra-green mb-4">GALERIA</span>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tight mb-4">
+            Momentos
+          </h1>
+          <p className="text-gray-500 max-w-2xl mx-auto text-base font-sans">
             Fotos e vídeos dos momentos mais marcantes da Directivo Algarve.
           </p>
         </div>
       </section>
 
       {/* Instagram Link */}
-      <section className="py-8 bg-white dark:bg-sporting-dark">
-        <div className="container-sporting text-center">
-          <a href="https://www.instagram.com/duxxialgarve/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
-            📸 Ver mais fotos no Instagram @duxxialgarve
+      <section className="py-8 bg-ultra-dark border-b border-ultra-gray">
+        <div className="container-ultra text-center">
+          <a href="https://www.instagram.com/duxxialgarve/" target="_blank" rel="noopener noreferrer" className="btn-ultra text-xs px-8 py-3">
+            @DUXXIALGARVE NO INSTAGRAM
           </a>
         </div>
       </section>
 
       {/* Grid */}
-      <section className="py-12 bg-white dark:bg-sporting-dark">
-        <div className="container-sporting">
+      <section className="py-12 bg-black">
+        <div className="container-ultra">
           {photos.length > 0 ? (
-            <div className="gallery-grid">
+            <div className="gallery-grid-ultra">
               {photos.map((photo) => (
-                <div key={photo.id} className="gallery-item" onClick={() => setSelectedPhoto(photo.src)}>
-                  <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
-                  <div className="gallery-overlay">
-                    <span className="text-white text-lg">🔍</span>
+                <div key={photo.id} className="gallery-item-ultra" onClick={() => setSelectedPhoto(photo.src)}>
+                  <Image src={photo.src} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+                  <div className="gallery-overlay-ultra">
+                    <span className="text-white text-2xl font-heading font-black">+</span>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-4xl mb-4">📸</p>
-              <p className="text-gray-500 dark:text-gray-400">Nenhuma foto neste álbum ainda.</p>
+              <p className="text-gray-600 text-sm font-heading font-bold uppercase tracking-wider">Nenhuma foto disponível.</p>
             </div>
           )}
         </div>
@@ -59,9 +57,11 @@ export default function GaleriaPage() {
 
       {/* Lightbox */}
       {selectedPhoto && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={() => setSelectedPhoto(null)}>
-          <button onClick={() => setSelectedPhoto(null)} className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 z-10">&times;</button>
-          <div className="relative max-w-5xl max-h-[85vh] w-full h-full">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4" onClick={() => setSelectedPhoto(null)}>
+          <button onClick={() => setSelectedPhoto(null)} className="absolute top-4 right-4 text-white/50 hover:text-white text-2xl z-10 font-heading font-bold">
+            FECHAR [X]
+          </button>
+          <div className="relative max-w-6xl max-h-[90vh] w-full h-full">
             <Image src={selectedPhoto} alt="Foto" fill className="object-contain" sizes="100vw" />
           </div>
         </div>

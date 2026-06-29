@@ -3,297 +3,303 @@
 @tailwind utilities;
 
 /* ============================================================
-   Directivo Algarve - Global Styles
+   DIRECTIVO ALGARVE — ULTRA STYLE
    Claque oficial do Sporting Clube de Portugal no Algarve
+   Ligada ao Directivo Ultras XXI
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap");
 
 @layer base {
   :root {
-    --sporting-green: #00833E;
-    --sporting-green-light: #00BFA5;
-    --sporting-gold: #C4A747;
-    --sporting-dark: #1a1a2e;
-    --sporting-white: #f8fafc;
-    --claque-red: #DC2626;
+    --ultra-black: #000000;
+    --ultra-dark: #0a0a0a;
+    --ultra-gray: #1a1a1a;
+    --ultra-green: #00833E;
+    --ultra-green-bright: #00FF66;
+    --ultra-gold: #C4A747;
+    --ultra-red: #DC2626;
+    --ultra-white: #f0f0f0;
   }
 
   html {
     scroll-behavior: smooth;
+    background-color: var(--ultra-black);
   }
 
   body {
-    @apply bg-white text-gray-900 dark:bg-sporting-dark dark:text-gray-100 font-sans transition-colors duration-300;
+    @apply bg-black text-gray-300 font-sans antialiased;
+    background-color: #000000;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading text-white;
   }
 
   ::selection {
-    @apply bg-sporting-green text-white;
+    @apply bg-ultra-green text-white;
   }
 
+  /* Scrollbar ultra style */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-gray-100 dark:bg-gray-800;
+    background: #000000;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-sporting-green rounded-full;
+    background: #00833E;
+    border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-sporting-green-light;
+    background: #00FF66;
   }
 }
 
 @layer components {
   /* ---- CONTAINERS ---- */
-  .container-sporting {
+  .container-ultra {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  .container-narrow {
+  .container-ultra-narrow {
     @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* ---- BUTTONS ---- */
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-sporting-green text-white font-bold uppercase tracking-wider rounded-lg 
-           hover:bg-sporting-green-light hover:shadow-lg hover:shadow-sporting-green/25 
-           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-sporting-green focus:ring-offset-2
-           dark:focus:ring-offset-sporting-dark border-2 border-transparent hover:border-white;
+  /* ---- BUTTONS - ULTRA STYLE ---- */
+  .btn-ultra {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-ultra-green text-white 
+           font-heading font-bold uppercase tracking-[0.15em] text-sm
+           border-2 border-ultra-green
+           hover:bg-black hover:text-ultra-green-bright hover:border-ultra-green-bright
+           transition-all duration-200;
   }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-sporting-green text-sporting-green 
-           font-bold uppercase tracking-wider rounded-lg hover:bg-sporting-green hover:text-white 
-           hover:shadow-lg hover:shadow-sporting-green/25 
-           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-sporting-green focus:ring-offset-2
-           dark:focus:ring-offset-sporting-dark dark:border-sporting-green-light dark:text-sporting-green-light
-           dark:hover:bg-sporting-green-light dark:hover:text-sporting-dark;
+  .btn-ultra-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white 
+           font-heading font-bold uppercase tracking-[0.15em] text-sm
+           hover:bg-white hover:text-black hover:border-white
+           transition-all duration-200;
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center px-4 py-2 text-gray-600 dark:text-gray-300 
-           hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg 
-           transition-all duration-200 ease-in-out;
+  .btn-ultra-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-gray-500 
+           hover:text-white transition-colors duration-200 text-sm font-heading font-semibold uppercase tracking-wider;
   }
 
-  .btn-gold {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-sporting-gold text-white font-semibold rounded-lg 
-           hover:bg-yellow-500 hover:shadow-lg hover:shadow-yellow-500/25 
-           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5;
+  .btn-ultra-red {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-ultra-red text-white 
+           font-heading font-bold uppercase tracking-[0.15em] text-sm border-2 border-ultra-red
+           hover:bg-black hover:text-ultra-red hover:border-ultra-red
+           transition-all duration-200;
   }
 
-  .btn-outline-white {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg 
-           hover:bg-white hover:text-sporting-dark transition-all duration-300;
+  /* ---- CARDS - ULTRA STYLE ---- */
+  .card-ultra {
+    @apply bg-ultra-dark border border-ultra-gray p-6
+           hover:border-ultra-green transition-all duration-200;
   }
-
-  /* ---- CARDS ---- */
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg 
-           hover:shadow-xl transition-all duration-300 ease-in-out 
-           border-2 border-gray-100 dark:border-gray-700;
-  }
-  .card-hover {
-    @apply card transform hover:-translate-y-1 hover:shadow-2xl hover:border-sporting-green;
-  }
-  .card-glass {
-    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg 
-           border border-white/20 dark:border-gray-700/30;
-  }
-  .card-dark {
-    @apply bg-sporting-dark/80 backdrop-blur-lg rounded-2xl shadow-lg border border-white/10;
+  .card-ultra-hover {
+    @apply card-ultra hover:bg-ultra-gray hover:border-ultra-green-bright;
   }
 
   /* ---- BADGES ---- */
-  .badge {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+  .badge-ultra {
+    @apply inline-flex items-center px-3 py-1 text-[10px] font-heading font-bold uppercase tracking-[0.2em];
   }
-  .badge-green {
-    @apply badge bg-sporting-green/10 text-sporting-green dark:bg-sporting-green/20 dark:text-sporting-green-light;
+  .badge-ultra-green {
+    @apply badge-ultra bg-ultra-green/20 text-ultra-green-bright border border-ultra-green/30;
   }
-  .badge-gold {
-    @apply badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
+  .badge-ultra-red {
+    @apply badge-ultra bg-ultra-red/20 text-ultra-red border border-ultra-red/30;
   }
-  .badge-red {
-    @apply badge bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300;
+  .badge-ultra-gray {
+    @apply badge-ultra bg-ultra-gray text-gray-400 border border-gray-800;
   }
-  .badge-gray {
-    @apply badge bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300;
+  .badge-ultra-gold {
+    @apply badge-ultra bg-ultra-gold/10 text-ultra-gold border border-ultra-gold/20;
   }
 
   /* ---- SECTION TITLES ---- */
-  .section-title {
-    @apply text-3xl md:text-4xl font-heading font-bold text-sporting-dark dark:text-white;
+  .section-title-ultra {
+    @apply text-3xl md:text-5xl font-heading font-black text-white uppercase tracking-tight;
   }
-  .section-divider {
-    @apply w-20 h-1 bg-sporting-green rounded-full mt-4;
+  .section-subtitle-ultra {
+    @apply text-base text-gray-500 font-heading font-semibold uppercase tracking-[0.2em] mb-2;
   }
-
-  /* ---- ANIMATIONS ---- */
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-  .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ---- GRADIENTS ---- */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-sporting-green to-sporting-green-light;
-  }
-  .gradient-bg {
-    @apply bg-gradient-to-r from-sporting-green via-sporting-green-light to-sporting-green;
-  }
-  .gradient-bg-dark {
-    @apply bg-gradient-to-br from-sporting-dark via-[#16213e] to-sporting-dark;
+  .section-divider-ultra {
+    @apply w-16 h-[3px] bg-ultra-green mt-6;
   }
 
   /* ---- HERO ---- */
-  .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent;
+  .hero-overlay-ultra {
+    @apply absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent;
   }
-  .hero-overlay-center {
-    @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent;
-  }
-
-  /* ---- MATCH CARD ---- */
-  .match-card {
-    @apply card p-6 flex flex-col items-center text-center;
-  }
-  .match-score {
-    @apply text-2xl md:text-3xl font-bold font-heading;
-  }
-  .match-team {
-    @apply text-sm font-semibold mt-2;
-  }
-  .match-time {
-    @apply text-xs text-gray-500 dark:text-gray-400 mt-1;
+  .hero-overlay-left {
+    @apply absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent;
   }
 
   /* ---- NAVIGATION ---- */
-  .nav-link {
-    @apply text-gray-600 dark:text-gray-300 hover:text-sporting-green dark:hover:text-sporting-green-light 
-           font-medium transition-colors duration-200 relative;
+  .nav-link-ultra {
+    @apply text-gray-400 hover:text-ultra-green-bright font-heading font-semibold text-sm 
+           uppercase tracking-wider transition-colors duration-200 relative px-3 py-2;
   }
-  .nav-link-active {
-    @apply text-sporting-green dark:text-sporting-green-light font-semibold;
+  .nav-link-ultra-active {
+    @apply text-ultra-green-bright;
   }
-  .nav-link::after {
+  .nav-link-ultra::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-sporting-green dark:bg-sporting-green-light 
-           transition-all duration-300;
+    @apply absolute bottom-0 left-3 right-3 h-[2px] bg-ultra-green-bright scale-x-0 
+           transition-transform duration-200;
   }
-  .nav-link:hover::after,
-  .nav-link-active::after {
-    @apply w-full;
+  .nav-link-ultra:hover::after,
+  .nav-link-ultra-active::after {
+    @apply scale-x-100;
+  }
+
+  /* ---- MATCH CARD ---- */
+  .match-card-ultra {
+    @apply card-ultra text-center;
+  }
+  .match-score-ultra {
+    @apply text-3xl font-heading font-black text-white;
+  }
+  .match-team-ultra {
+    @apply text-xs font-heading font-bold uppercase tracking-wider text-gray-400;
+  }
+  .match-time-ultra {
+    @apply text-[10px] text-gray-600 font-semibold uppercase tracking-wider mt-2;
+  }
+  .match-vs-ultra {
+    @apply w-16 h-16 bg-ultra-green flex items-center justify-center;
+  }
+  .match-vs-ultra span {
+    @apply text-white font-heading font-black text-lg;
   }
 
   /* ---- NEWS CARD ---- */
-  .news-card {
-    @apply card-hover overflow-hidden;
+  .news-card-ultra {
+    @apply card-ultra-hover overflow-hidden;
   }
-  .news-image {
-    @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
+  .news-image-ultra {
+    @apply w-full h-48 object-cover transition-transform duration-700;
+  }
+  .news-card-ultra:hover .news-image-ultra {
+    @apply scale-110;
   }
 
   /* ---- STANDINGS TABLE ---- */
-  .standings-table {
+  .standings-table-ultra {
     @apply w-full text-sm;
   }
-  .standings-table th {
-    @apply px-4 py-3 text-left font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider text-xs;
+  .standings-table-ultra thead th {
+    @apply px-4 py-3 text-left font-heading font-bold text-[10px] uppercase tracking-[0.15em] text-gray-500 border-b border-ultra-gray;
   }
-  .standings-table td {
-    @apply px-4 py-3 border-t border-gray-100 dark:border-gray-700;
+  .standings-table-ultra tbody td {
+    @apply px-4 py-3 border-b border-ultra-dark text-gray-300;
   }
-  .standings-table tr:hover td {
-    @apply bg-gray-50 dark:bg-gray-700/50;
+  .standings-table-ultra tbody tr:hover td {
+    @apply bg-ultra-gray/50;
+  }
+  .standings-table-ultra .sporting-row td {
+    @apply bg-ultra-green/5 border-l-2 border-l-ultra-green;
   }
 
   /* ---- TIMELINE ---- */
-  .timeline-line {
-    @apply absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-sporting-green/30 transform md:-translate-x-1/2;
+  .timeline-line-ultra {
+    @apply absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-ultra-green/40;
   }
-  .timeline-dot {
-    @apply absolute left-4 md:left-1/2 w-4 h-4 bg-sporting-green rounded-full border-4 border-white dark:border-sporting-dark 
-           transform -translate-x-1/2 shadow-md;
+  .timeline-dot-ultra {
+    @apply absolute left-4 md:left-1/2 w-4 h-4 bg-ultra-green border-2 border-black 
+           -translate-x-1/2;
   }
-  .timeline-card {
+  .timeline-card-ultra {
     @apply relative pl-12 md:pl-0 md:w-1/2;
   }
-  .timeline-card-left {
+  .timeline-card-left-ultra {
     @apply md:pr-12 md:ml-0;
   }
-  .timeline-card-right {
+  .timeline-card-right-ultra {
     @apply md:pl-12 md:ml-auto;
   }
 
   /* ---- FORMS ---- */
-  .form-input {
-    @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg 
-           bg-white dark:bg-gray-800 text-gray-900 dark:text-white
-           focus:ring-2 focus:ring-sporting-green focus:border-transparent 
-           outline-none transition-all duration-200;
+  .form-input-ultra {
+    @apply w-full px-4 py-3.5 bg-ultra-dark border border-ultra-gray text-white 
+           focus:border-ultra-green focus:ring-0 outline-none transition-colors duration-200
+           placeholder:text-gray-600 text-sm font-sans;
   }
-  .form-label {
-    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5;
+  .form-label-ultra {
+    @apply block text-xs font-heading font-bold uppercase tracking-[0.15em] text-gray-400 mb-2;
   }
-  .form-error {
-    @apply text-red-500 text-xs mt-1;
+  .form-error-ultra {
+    @apply text-ultra-red text-[10px] uppercase tracking-wider font-semibold mt-1;
   }
-  .form-select {
-    @apply form-input appearance-none cursor-pointer;
+  .form-select-ultra {
+    @apply form-input-ultra appearance-none cursor-pointer;
   }
-  .form-textarea {
-    @apply form-input resize-none min-h-[120px];
+  .form-textarea-ultra {
+    @apply form-input-ultra resize-none min-h-[140px];
   }
 
   /* ---- GALLERY ---- */
-  .gallery-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+  .gallery-grid-ultra {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1;
   }
-  .gallery-item {
-    @apply relative overflow-hidden rounded-2xl cursor-pointer;
+  .gallery-item-ultra {
+    @apply relative overflow-hidden cursor-pointer border border-black;
   }
-  .gallery-item img {
-    @apply w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110;
+  .gallery-item-ultra img {
+    @apply w-full h-64 object-cover transition-all duration-500;
   }
-  .gallery-overlay {
-    @apply absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-           flex items-center justify-center;
+  .gallery-item-ultra:hover img {
+    @apply scale-110 brightness-50;
   }
-
-  /* ---- SOCIO CARD ---- */
-  .socio-card {
-    @apply card-dark p-8 text-center relative overflow-hidden;
-  }
-  .socio-card::before {
-    content: '';
-    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sporting-green via-sporting-gold to-sporting-green;
+  .gallery-overlay-ultra {
+    @apply absolute inset-0 bg-black/0 hover:bg-black/60 transition-all duration-300 
+           flex items-center justify-center opacity-0 hover:opacity-100;
   }
 
-  /* ---- LOADING ---- */
-  .skeleton {
-    @apply bg-gray-200 dark:bg-gray-700 rounded animate-pulse;
+  /* ---- DIVIDERS ---- */
+  .divider-ultra {
+    @apply h-[1px] bg-ultra-gray my-12;
   }
-}
+  .divider-ultra-green {
+    @apply h-[3px] bg-ultra-green w-24;
+  }
 
-@layer utilities {
-  .text-balance { text-wrap: balance; }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  /* ---- GLOW EFFECTS ---- */
+  .glow-green {
+    box-shadow: 0 0 30px rgba(0, 131, 62, 0.3), 0 0 60px rgba(0, 131, 62, 0.1);
   }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .glow-green-hover:hover {
+    box-shadow: 0 0 40px rgba(0, 255, 102, 0.3), 0 0 80px rgba(0, 255, 102, 0.1);
+  }
+
+  /* ---- MISC ---- */
+  .ultra-stripe {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 131, 62, 0.03) 10px,
+      rgba(0, 131, 62, 0.03) 20px
+    );
+  }
+
+  .text-ultra-muted {
+    @apply text-gray-500;
+  }
+
+  /* ---- PROGRESS BAR ---- */
+  .progress-bar-ultra {
+    @apply h-2 bg-ultra-gray overflow-hidden;
+  }
+  .progress-bar-ultra-fill {
+    @apply h-full bg-ultra-green transition-all duration-500;
+  }
+
+  /* ---- SKELETON ---- */
+  .skeleton-ultra {
+    @apply bg-ultra-gray animate-pulse;
+  }
 }
