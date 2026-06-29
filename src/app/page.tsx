@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { formatDateShort, formatTime } from "@/lib/utils";
 import { siteHeroBg, claqueInfo } from "@/lib/site-config";
-import { getFeaturedNews, getLatestNews, getNextMatch, getStandings } from "@/lib/services/data-service";
+import { getFeaturedNews, getLatestNews, getStandings } from "@/lib/services/data-service";
 import { claqueStats } from "@/data/mockData";
 
 export default async function HomePage() {
-  const [nextMatch, standings, featuredNews, latestNews] = await Promise.all([
-    getNextMatch(),
+  const [standings, featuredNews, latestNews] = await Promise.all([
     getStandings(),
     getFeaturedNews(),
     getLatestNews(3),
