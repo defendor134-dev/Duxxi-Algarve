@@ -61,23 +61,16 @@ export default function SociosPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-3 max-w-3xl mx-auto">
             {[
-              { name: "Novo Sócio", price: "30€", periodo: "inscrição", popular: true, features: ["Acesso ao grupo WhatsApp", "Newsletter exclusiva", "Descontos em merch", "Participação em eventos", "Camisola da claque", "Voto nas decisões"] },
-              { name: "Renovação", price: "15€", periodo: "ano", features: ["Mantém todos os benefícios", "Prioridade em deslocações", "Participação em eventos", "Sorteios exclusivos"] },
+              { name: "Novo Sócio", price: "30€", periodo: "inscrição", popular: true },
+              { name: "Renovação", price: "15€", periodo: "ano" },
             ].map((plan) => (
               <div key={plan.name} className="card-ultra p-8 text-center border-ultra-green/20">
                 {plan.popular && <div className="badge-ultra-green mb-4">MAIS POPULAR</div>}
                 <h3 className="text-xl font-heading font-bold text-white mb-4">{plan.name}</h3>
-                <div className="mb-6">
+                <div className="mb-10">
                   <span className="text-5xl font-heading font-black text-ultra-green-bright">{plan.price}</span>
                   <span className="text-gray-600 text-sm font-sans">/{plan.periodo}</span>
                 </div>
-                <ul className="space-y-3 mb-10 text-left">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-sm text-gray-400 font-sans">
-                      <span className="text-ultra-green-bright text-xs">+</span> {f}
-                    </li>
-                  ))}
-                </ul>
                 <button className="btn-ultra w-full justify-center glow-green-hover">
                   {plan.popular ? "QUERO SER SÓCIO" : "SELECIONAR"}
                 </button>
