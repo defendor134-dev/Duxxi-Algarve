@@ -19,7 +19,7 @@ export const claqueInfo = {
   founded: 2019,
   motto: "Ultra Algarve - Leoninos até morrer",
   description:
-    "O Directivo Algarve é uma claque ultra do Sporting Clube de Portugal, nascida no seio do Directivo Ultras XXI. Representamos a alma sportinguista no Algarve com paixão, militância e espírito de grupo. Quem é do Algarve é também do Ultras XXI, mas nem todo o Ultras XXI é do Algarve. Somos a extensão sul da família ultra leonina.",
+    "O Directivo Algarve é uma claque ultra do Sporting Clube de Portugal, nascido no seio do Directivo Ultras XXI. Representamos a alma sportinguista no Algarve com paixão, militância e espírito de grupo. Quem é do Algarve é também do Ultras XXI, mas nem todo o Ultras XXI é do Algarve. Somos a extensão sul da família ultra leonina.",
   location: "Algarve, Portugal",
   colors: {
     primary: "#00833E", // Sporting green

@@ -9,7 +9,7 @@ import { Match, NewsArticle, Player, Standing, Modality } from "@/types";
 export const claqueTimeline = [
   { year: 2019, title: "Fundação da Directivo Algarve", description: "Um grupo de amigos sportinguistas do Algarve decide criar uma claque oficial para apoiar o Sporting CP nas deslocações ao sul do país." },
   { year: 2020, title: "Primeira deslocação em grupo", description: "Organizamos a primeira viagem oficial para apoiar o Sporting no Estádio do Algarve, com mais de 50 membros." },
-  { year: 2021, title: "Reconhecimento oficial", description: "A Directivo Algarve é reconhecida como claque oficial do Sporting Clube de Portugal pela direção do clube." },
+  { year: 2021, title: "Reconhecimento oficial", description: "O Directivo Algarve é reconhecido como claque oficial do Sporting Clube de Portugal pela direção do clube." },
   { year: 2022, title: "Expansão para todo o Algarve", description: "A claque expande a sua presença para todos os concelhos do Algarve, com núcleos em Faro, Portimão, Albufeira e Olhão." },
   { year: 2023, title: "100 membros ativos", description: "Atingimos a marca de 100 sócios ativos, consolidando-nos como a maior claque sportinguista do sul do país." },
   { year: 2024, title: "Deslocações nacionais e internacionais", description: "Organizamos deslocações para todos os estádios nacionais e acompanhamos o Sporting na Champions League." },
@@ -25,7 +25,7 @@ export const claqueStats = [
 
 export const claqueBenefits = [
   { title: "AMOR AO CLUBE", description: "O verdadeiro benefício de pertencer a uma claque ultra é sentir o amor incondicional pelo Sporting Clube de Portugal. Coerência, honra e fidelidade — eis a nossa mentalidade." },
-  { title: "UNIÃO", description: "Fazer parte de algo maior que nós. A Directivo Algarve é uma família sportinguista onde todos se apoiam dentro e fora dos estádios." },
+  { title: "UNIÃO", description: "Fazer parte de algo maior que nós. O Directivo Algarve é uma família sportinguista onde todos se apoiam dentro e fora dos estádios." },
   { title: "VOZ ATIVA", description: "Direito a voto nas decisões importantes da claque. A tua opinião conta para definir o rumo do Directivo Algarve." },
   { title: "EVENTOS E CONVÍVIOS", description: "Participação em festas, jantares e encontros de membros. O espírito sportinguista vive-se dentro e fora do estádio." },
   { title: "GRUPO EXCLUSIVO", description: "Acesso ao grupo privado de WhatsApp e redes sociais da claque. Onde a verdadeira comunicação acontece." },
@@ -144,7 +144,7 @@ export const mockNews: NewsArticle[] = [
   { id: "1", title: "Directivo Algarve marca presença no clássico em Alvalade", description: "Mais de 40 membros da Directivo Algarve estiveram presentes no Estádio José Alvalade para apoiar o Sporting na vitória sobre o FC Porto.", url: "#", imageUrl: "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-25T10:30:00Z", category: "Claque", isFeatured: true },
   { id: "2", title: "Inscrições abertas para deslocação a Alvalade", description: "Estão abertas as inscrições para a próxima deslocação a Lisboa. Garante o teu lugar!", url: "#", imageUrl: "https://images.unsplash.com/photo-1577223625816-7540f056285b?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-23T15:00:00Z", category: "Deslocações" },
   { id: "3", title: "Convívio de Verão da Directivo Algarve", description: "No próximo sábado, vai realizar-se o convívio anual de verão da claque. Haverá churrasco, música e muito espírito sportinguista.", url: "#", imageUrl: "https://images.unsplash.com/photo-1546519638-68e109acb4b9?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-22T09:15:00Z", category: "Eventos" },
-  { id: "4", title: "Sporting vence e isola-se na liderança", description: "O Sporting CP venceu o Rio Ave por 3-0 e isolou-se na liderança do campeonato. A Directivo Algarve marcou presença.", url: "#", imageUrl: "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=800&q=80", source: "Record", publishedAt: "2026-06-21T14:00:00Z", category: "Sporting", isFeatured: true },
+  { id: "4", title: "Sporting vence e isola-se na liderança", description: "O Sporting CP venceu o Rio Ave por 3-0 e isolou-se na liderança do campeonato. O Directivo Algarve marcou presença.", url: "#", imageUrl: "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=800&q=80", source: "Record", publishedAt: "2026-06-21T14:00:00Z", category: "Sporting", isFeatured: true },
   { id: "5", title: "Nova camisola da claque já disponível", description: "Já está disponível a nova camisola da Directivo Algarve para a época 2026/27. Encomenda a tua!", url: "#", imageUrl: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-20T11:00:00Z", category: "Merch" },
   { id: "6", title: "Assembleia Geral da Directivo Algarve", description: "Convocamos todos os sócios para a Assembleia Geral Ordinária que se realizará no próximo mês.", url: "#", imageUrl: "https://images.unsplash.com/photo-1461896836934-8faf68aa5c6a?w=800&q=80", source: "Directivo Algarve", publishedAt: "2026-06-19T16:30:00Z", category: "Claque" },
 ];
