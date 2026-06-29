@@ -24,12 +24,11 @@ export const claqueStats = [
 ];
 
 export const claqueBenefits = [
-  { icon: "🎫", title: "Acesso Prioritário", description: "Garantia de lugar nas deslocações organizadas pela claque" },
-  { icon: "👕", title: "Merch Oficial", description: "Descontos exclusivos em merchandise da claque" },
-  { icon: "🎉", title: "Eventos e Convívios", description: "Participação em festas, jantares e encontros de membros" },
-  { icon: "📱", title: "Grupo Exclusivo", description: "Acesso ao grupo privado de WhatsApp e redes sociais" },
-  { icon: "🏆", title: "Sorteios e Prémios", description: "Participação em sorteios de bilhetes e material desportivo" },
-  { icon: "🗳️", title: "Voz Ativa", description: "Direito a voto nas decisões importantes da claque" },
+  { title: "AMOR AO CLUBE", description: "O verdadeiro benefício de pertencer a uma claque ultra é sentir o amor incondicional pelo Sporting Clube de Portugal. Somos leão até morrer." },
+  { title: "UNIÃO", description: "Fazer parte de algo maior que nós. A Directivo Algarve é uma família sportinguista onde todos se apoiam dentro e fora dos estádios." },
+  { title: "VOZ ATIVA", description: "Direito a voto nas decisões importantes da claque. A tua opinião conta para definir o rumo do Directivo Algarve." },
+  { title: "EVENTOS E CONVÍVIOS", description: "Participação em festas, jantares e encontros de membros. O espírito sportinguista vive-se dentro e fora do estádio." },
+  { title: "GRUPO EXCLUSIVO", description: "Acesso ao grupo privado de WhatsApp e redes sociais da claque. Onde a verdadeira comunicação acontece." },
 ];
 
 export const claqueLeaders = [
