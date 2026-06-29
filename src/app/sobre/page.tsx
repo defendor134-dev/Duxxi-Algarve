@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { claqueInfo } from "@/lib/site-config";
-import { claqueTimeline } from "@/data/mockData";
 
 export const metadata = { title: "Sobre Nós" };
 
@@ -35,9 +34,9 @@ export default function SobrePage() {
           <div className="space-y-6 text-gray-500 text-sm font-sans leading-relaxed max-w-3xl mx-auto">
             <p>
               O <strong className="text-white">Directivo Ultras XXI (DUXXI)</strong> nasceu a <strong className="text-ultra-green-bright">17 de maio de 2002</strong>, 
-              fruto de uma rutura interna na claque Juventude Leonina. Liderado na sua génese por Miguel d'Almada, 
-              o grupo rapidamente se consolidou como a segunda maior claque do Sporting, distinguindo-se pela originalidade 
-              dos seus cânticos e pela forte identidade visual e coreográfica.
+              fruto de uma rutura interna na claque Juventude Leonina. Liderado na sua génese por Miguel d'Almada 
+              (então membro da direção da Juve Leo), o grupo rapidamente se consolidou como a segunda maior claque do Sporting, 
+              distinguindo-se pela originalidade dos seus cânticos e pela forte identidade visual e coreográfica.
             </p>
             <p>
               Atualmente sediado no <strong className="text-white">sector A18</strong> da bancada Sul do Estádio José Alvalade, 
@@ -49,7 +48,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* O Núcleo do Algarve */}
+      {/* A Presença do Directivo no Sul */}
       <section className="py-20 bg-black">
         <div className="container-ultra-narrow">
           <div className="text-center mb-16">
@@ -59,27 +58,50 @@ export default function SobrePage() {
           </div>
           <div className="space-y-6 text-gray-500 text-sm font-sans leading-relaxed max-w-3xl mx-auto">
             <p>
-              Nos <strong className="text-white">inícios da década de 2010</strong>, sportinguistas do Algarve com ligação ao Directivo Ultras XXI 
-              começam a organizar-se como núcleo regional. O <strong className="text-ultra-green-bright">Directivo Algarve</strong> nasce como um 
-              polo de apoio ultra no sul do país, com a mesma mentalidade que define o DUXXI: 
-              <strong className="text-white"> Coerência, Honra e Fidelidade</strong>.
+              Apesar do coração do DUXXI bater no sector A18 da bancada Sul do Estádio José Alvalade, 
+              a mística estende-se ao sul do país com o <strong className="text-white">Directivo Algarve</strong>.
             </p>
             <p>
-                O núcleo algarvio é composto por <strong className="text-white">ultras</strong> — não por meros simpatizantes. 
-                A nossa presença faz-se sentir em todos os estádios por onde o Sporting passa, de norte a sul do país e além-fronteiras. 
-                Acompanhamos o futebol e todas as modalidades do clube, pintando pavilhões e estádios de verde e branco.
+              <strong className="text-ultra-green-bright">Apoio Constante:</strong> O núcleo tem sido incansável a percorrer 
+              quilómetros de norte a sul de Portugal e pela Europa fora, marcando presença em jogos oficiais e deslocações 
+              da pré-época ao sul do país.
             </p>
             <p>
-                Fora das quatro linhas, o Directivo Algarve organiza ações de solidariedade social em cidades como Faro e Olhão, 
-                e marca presença na receção à equipa no aeroporto em dias de jogo. 
-                Somos a extensão sul da família ultra leonina.
+              <strong className="text-ultra-green-bright">Apoio Multidesportivo:</strong> Acompanhando de perto a filosofia do clube, 
+              o grupo apoia ativamente as várias modalidades e escalões do Sporting, pintando os pavilhões e estádios de verde e branco.
+            </p>
+            <p>
+              <strong className="text-ultra-green-bright">Acção Social e Comunidade:</strong> O núcleo algarvio destaca-se igualmente 
+              fora das quatro linhas, organizando e participando em ações de solidariedade social em cidades como Faro e Olhão.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Evolução Recente */}
+      <section className="py-20 bg-ultra-dark">
+        <div className="container-ultra-narrow">
+          <div className="text-center mb-16">
+            <span className="badge-ultra-green mb-4">ESTATUTO ATUAL</span>
+            <h2 className="section-title-ultra">Evolução e Presença</h2>
+            <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
+          </div>
+          <div className="space-y-6 text-gray-500 text-sm font-sans leading-relaxed max-w-3xl mx-auto">
+            <p>
+              Ao longo da sua história, o grupo enfrentou dinâmicas intensas com a direção do clube e as autoridades. 
+              O movimento tem vindo a atuar com o caráter não oficial de acordo com os regulamentos internos, 
+              mas mantém uma forte ligação à sua comunidade de sócios e simpatizantes.
+            </p>
+            <p>
+              O núcleo do Algarve continua a comemorar marcos históricos, reforçando laços com outros núcleos e delegações 
+              oficiais do Sporting (como o Núcleo de Tavira), promovendo o espírito de união e a partilha da mentalidade Ultra.
             </p>
           </div>
         </div>
       </section>
 
       {/* Pilares */}
-      <section className="py-20 bg-ultra-dark" id="missao">
+      <section className="py-20 bg-black" id="missao">
         <div className="container-ultra-narrow">
           <div className="text-center mb-16">
             <h2 className="section-title-ultra">A Nossa Mentalidade</h2>
@@ -100,34 +122,8 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-black" id="historia">
-        <div className="container-ultra-narrow">
-          <div className="text-center mb-16">
-            <h2 className="section-title-ultra">A Nossa História</h2>
-            <p className="text-gray-600 text-sm font-sans mt-2">Do Directivo Ultras XXI ao núcleo do Algarve</p>
-            <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
-          </div>
-          <div className="relative">
-            <div className="timeline-line-ultra" />
-            <div className="space-y-12">
-              {claqueTimeline.map((item, index) => (
-                <div key={item.year} className={`timeline-card-ultra ${index % 2 === 0 ? "timeline-card-left-ultra" : "timeline-card-right-ultra"}`}>
-                  <div className="timeline-dot-ultra" />
-                  <div className="card-ultra-hover p-6 ml-4 md:ml-0">
-                    <span className="badge-ultra-green mb-3">{item.year}</span>
-                    <h3 className="text-xl font-heading font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-gray-500 text-sm font-sans">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Comunicado de Fundação */}
-      <section className="py-20 bg-ultra-dark">
+      <section className="py-20 bg-ultra-dark" id="historia">
         <div className="container-ultra-narrow">
           <div className="text-center mb-16">
             <h2 className="section-title-ultra">Comunicado de Fundação</h2>
