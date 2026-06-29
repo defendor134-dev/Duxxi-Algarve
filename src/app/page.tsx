@@ -39,8 +39,8 @@ export default async function HomePage() {
             {claqueInfo.motto}
           </p>
           <p className="text-base text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed font-sans">
-            A claque ultra que representa o Sporting Clube de Portugal no Algarve. 
-            Nascidos no Directivo Ultras XXI. Leões até morrer.
+            O Directivo Algarve é o núcleo regional do Directivo Ultras XXI no sul do país. 
+            Coerência, Honra e Fidelidade — eis a nossa mentalidade.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/socios" className="btn-ultra text-base px-10 py-5 glow-green-hover">
@@ -132,14 +132,16 @@ export default async function HomePage() {
               <h2 className="text-4xl md:text-6xl font-heading font-black text-white uppercase tracking-tight mb-8">
                 Directivo<br />Algarve
               </h2>
-              <p className="text-gray-500 text-base leading-relaxed mb-6 font-sans">
-                A <strong className="text-ultra-green-bright">Directivo Algarve</strong> nasceu da paixão de um grupo de amigos sportinguistas do Algarve. 
-                Somos a extensão sul do <strong className="text-white">Directivo Ultras XXI</strong>.
-              </p>
-              <p className="text-gray-600 text-sm leading-relaxed mb-10 font-sans">
-                Representamos a alma sportinguista no Algarve com paixão, militância e espírito de grupo. 
-                Organizamos deslocações, convívios e atividades que unem todos os sportinguistas da região.
-              </p>
+          <p className="text-gray-500 text-base leading-relaxed mb-6 font-sans">
+            <strong className="text-white">O Directivo Algarve</strong> é o núcleo regional do 
+            <strong className="text-ultra-green-bright"> Directivo Ultras XXI</strong> no sul do país.
+            Com o lema <strong className="text-white">Coerência, Honra e Fidelidade</strong>, 
+            estendemos a mentalidade Ultra a todo o Algarve.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-10 font-sans">
+            Percorremos quilómetros para apoiar o Sporting de norte a sul do país e pela Europa fora. 
+            Apoiamos ativamente todas as modalidades do clube e organizamos ações de solidariedade social na região.
+          </p>
               <Link href="/sobre" className="btn-ultra">
                 SABER MAIS
               </Link>
@@ -270,7 +272,7 @@ export default async function HomePage() {
             Faz Parte Disto
           </h2>
           <p className="text-base text-gray-500 max-w-2xl mx-auto mb-10 font-sans">
-            Junta-te à Directivo Algarve. Vive o Sporting como nunca antes. Sê parte da maior claque sportinguista do Algarve.
+            Junta-te ao Directivo Algarve. Vive o Sporting com paixão, militância e espírito de grupo.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/socios" className="btn-ultra text-base px-12 py-5 glow-green-hover">
