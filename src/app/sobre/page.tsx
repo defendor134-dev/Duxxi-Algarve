@@ -107,11 +107,12 @@ export default function SobrePage() {
             <h2 className="section-title-ultra">A Nossa Mentalidade</h2>
             <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
           </div>
-          <div className="grid md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { title: "Coerência", desc: "Entre o que se diz e o que se faz. Entre o que se canta e o que se vive. Não há meio-termo quando se é Leão." },
-              { title: "Honra", desc: "Honrar o símbolo, honrar a bancada, honrar os que vieram antes. O nome do Sporting e do Directivo não se mancha." },
-              { title: "Fidelidade", desc: "Nos dias bons e nos dias maus. Nas vitórias e nas derrotas. Leal ao clube, leal ao grupo, leal aos nossos." },
+              { title: "COERÊNCIA", desc: "Entre o que se diz e o que se faz" },
+              { title: "HONRA", desc: "O nome do Sporting não se mancha" },
+              { title: "FIDELIDADE", desc: "Leal ao clube, leal ao grupo" },
+              { title: "UNIÃO", desc: "Família ultra leonina" },
             ].map((item) => (
               <div key={item.title} className="card-ultra-hover p-8 text-center">
                 <h3 className="text-2xl font-heading font-black text-ultra-green-bright uppercase tracking-tight mb-4">{item.title}</h3>
