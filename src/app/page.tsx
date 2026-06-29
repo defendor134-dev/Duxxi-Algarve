@@ -148,10 +148,10 @@ export default async function HomePage() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { title: "PAIXÃO", desc: "Amor ao Sporting" },
-                { title: "MILITÂNCIA", desc: "Apoio incondicional" },
-                { title: "UNIÃO", desc: "Família leonina" },
-                { title: "AÇÃO", desc: "Sempre presentes" },
+                { title: "COERÊNCIA", desc: "Entre o que se diz e o que se faz" },
+                { title: "HONRA", desc: "O nome do Sporting não se mancha" },
+                { title: "FIDELIDADE", desc: "Leal ao clube, leal ao grupo" },
+                { title: "UNIÃO", desc: "Família ultra leonina" },
               ].map((item) => (
                 <div key={item.title} className="card-ultra p-6 text-center border-ultra-green/10">
                   <p className="text-2xl font-heading font-black text-ultra-green-bright mb-2">{item.title}</p>
