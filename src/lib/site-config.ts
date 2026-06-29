@@ -15,7 +15,7 @@ export const siteFeatureBg = process.env.NEXT_PUBLIC_SITE_FEATURE_BG || "/site-i
 
 export const claqueInfo = {
   fullName: "Directivo Algarve",
-  shortName: "DA",
+  shortName: "DUXXI ALGARVE",
   founded: 2019,
   motto: "Ultra Algarve - Leoninos até morrer",
   description:
