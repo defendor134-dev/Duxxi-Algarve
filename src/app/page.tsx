@@ -264,7 +264,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-ultra-green/5 via-transparent to-ultra-green/5" />
         <div className="relative z-10 container-ultra text-center">
           <div className="w-20 h-20 mx-auto mb-6 border-2 border-ultra-green flex items-center justify-center">
-            <span className="text-4xl font-heading font-black text-ultra-green-bright">DA</span>
+            <span className="text-2xl font-heading font-black text-ultra-green-bright">DUXXI<br/>ALGARVE</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-heading font-black text-white uppercase tracking-tight mb-4">
             Faz Parte Disto

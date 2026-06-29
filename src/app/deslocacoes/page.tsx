@@ -1,7 +1,7 @@
-"use client";
-
-import { deslocacoesData } from "@/data/mockData";
+import Link from "next/link";
 import { claqueInfo } from "@/lib/site-config";
+
+export const metadata = { title: "Deslocações" };
 
 export default function DeslocacoesPage() {
   return (
@@ -32,45 +32,20 @@ export default function DeslocacoesPage() {
         </div>
       </section>
 
-      {/* Lista de Deslocações */}
+      {/* Tipos de Deslocações */}
       <section className="py-20 bg-black">
         <div className="container-ultra">
-          <div className="grid gap-3 max-w-4xl mx-auto">
-            {deslocacoesData.map((trip) => (
-              <div key={trip.id} className="card-ultra p-6 md:p-8 relative overflow-hidden">
-                <div className={`absolute top-0 right-0 px-4 py-1.5 text-[9px] font-heading font-bold uppercase tracking-widest text-white ${trip.estado === "aberto" ? "bg-ultra-green" : "bg-ultra-red"}`}>
-                  {trip.estado === "aberto" ? "ABERTO" : "LOTADO"}
-                </div>
-                <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
-                  <div>
-                    <h3 className="text-xl font-heading font-bold text-white mb-3">{trip.jogo}</h3>
-                    <div className="space-y-1.5 text-xs text-gray-600 font-heading font-semibold uppercase tracking-wider mb-4">
-                      <p>{trip.data} às {trip.hora}</p>
-                      <p>🏟️ {trip.estadio}</p>
-                      <p>📍 {trip.localPartida} às {trip.horaPartida}</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <span className="badge-ultra-green text-[10px]">{trip.vagas - trip.vagasOcupadas} vagas</span>
-                      <span className="text-2xl font-heading font-black text-ultra-green-bright">{trip.preco}</span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-3 min-w-[140px]">
-                    <div className="progress-bar-ultra">
-                      <div className="progress-bar-ultra-fill" style={{ width: `${(trip.vagasOcupadas / trip.vagas) * 100}%` }} />
-                    </div>
-                    <p className="text-[10px] text-gray-600 font-heading font-bold uppercase tracking-wider text-center">{trip.vagasOcupadas}/{trip.vagas} ocupados</p>
-                    <a
-                      href={claqueInfo.contact.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`text-center text-xs font-heading font-bold uppercase tracking-wider px-6 py-3 transition-all duration-200 ${trip.estado === "aberto" ? "btn-ultra glow-green-hover" : "bg-ultra-gray text-gray-700 cursor-not-allowed"}`}
-                    >
-                      {trip.estado === "aberto" ? "INSCREVER" : "LOTADO"}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-3 max-w-4xl mx-auto">
+            <Link href="/deslocacoes/alvalade" className="card-ultra p-8 text-center border-ultra-green/20 hover:border-ultra-green-bright transition-colors">
+              <div className="text-4xl mb-4">🏟️</div>
+              <h3 className="text-2xl font-heading font-black text-white mb-2">JOGOS EM ALVALADE</h3>
+              <p className="text-xs text-gray-600 font-sans">Deslocações ao Estádio José Alvalade para apoiar o Sporting em casa.</p>
+            </Link>
+            <Link href="/deslocacoes/aways" className="card-ultra p-8 text-center border-ultra-green/20 hover:border-ultra-green-bright transition-colors">
+              <div className="text-4xl mb-4">✈️</div>
+              <h3 className="text-2xl font-heading font-black text-white mb-2">AWAYS</h3>
+              <p className="text-xs text-gray-600 font-sans">Deslocações fora de casa, por todo o país e Europa.</p>
+            </Link>
           </div>
         </div>
       </section>
