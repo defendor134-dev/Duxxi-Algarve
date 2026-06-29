@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { claqueInfo } from "@/lib/site-config";
+import { claqueTimeline } from "@/data/mockData";
 
 export const metadata = { title: "Sobre Nós" };
 
@@ -39,9 +40,10 @@ export default function SobrePage() {
               dos seus cânticos e pela forte identidade visual e coreográfica.
             </p>
             <p>
-              O coração do DUXXI bate no setor A18 da bancada Sul do Estádio José Alvalade. 
-              A mística estende-se a todo o país através de núcleos regionais — e o sul é representado pelo 
-              <strong className="text-white"> Directivo Algarve</strong>.
+              Atualmente sediado no <strong className="text-white">sector A18</strong> da bancada Sul do Estádio José Alvalade, 
+              o DUXXI é reconhecido como um dos grupos ultra mais organizados e fiéis do país. 
+              A sua mística estende-se a todo o território nacional através de núcleos regionais — e o sul é representado 
+              pelo <strong className="text-white">Directivo Algarve</strong>.
             </p>
           </div>
         </div>
@@ -57,18 +59,20 @@ export default function SobrePage() {
           </div>
           <div className="space-y-6 text-gray-500 text-sm font-sans leading-relaxed max-w-3xl mx-auto">
             <p>
-              O <strong className="text-white">Directivo Algarve</strong> é o núcleo regional e um dos pólos de apoio mais ativos 
-              do Directivo Ultras XXI no sul do país. Com o lema <strong className="text-ultra-green-bright">"Coerência, Honra e Fidelidade"</strong>, 
-              o núcleo estende a mentalidade Ultra e a paixão leonina a todo o Algarve.
+              Nos <strong className="text-white">inícios da década de 2010</strong>, sportinguistas do Algarve com ligação ao Directivo Ultras XXI 
+              começam a organizar-se como núcleo regional. O <strong className="text-ultra-green-bright">Directivo Algarve</strong> nasce como um 
+              polo de apoio ultra no sul do país, com a mesma mentalidade que define o DUXXI: 
+              <strong className="text-white"> Coerência, Honra e Fidelidade</strong>.
             </p>
             <p>
-              O núcleo tem sido incansável a percorrer quilómetros de norte a sul de Portugal e pela Europa fora, 
-              marcando presença em jogos oficiais e deslocações. Acompanha de perto a filosofia do clube, 
-              apoiando ativamente as várias modalidades e escalões do Sporting.
+                O núcleo algarvio é composto por <strong className="text-white">ultras</strong> — não por meros simpatizantes. 
+                A nossa presença faz-se sentir em todos os estádios por onde o Sporting passa, de norte a sul do país e além-fronteiras. 
+                Acompanhamos o futebol e todas as modalidades do clube, pintando pavilhões e estádios de verde e branco.
             </p>
             <p>
-              Fora das quatro linhas, o núcleo algarvio destaca-se igualmente pela organização de ações de solidariedade social 
-              em cidades como Faro e Olhão, e pela receção à equipa no aeroporto em dias de jogo.
+                Fora das quatro linhas, o Directivo Algarve organiza ações de solidariedade social em cidades como Faro e Olhão, 
+                e marca presença na receção à equipa no aeroporto em dias de jogo. 
+                Somos a extensão sul da família ultra leonina.
             </p>
           </div>
         </div>
@@ -96,11 +100,37 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* História - Comunicação de Fundação */}
+      {/* Timeline */}
       <section className="py-20 bg-black" id="historia">
         <div className="container-ultra-narrow">
           <div className="text-center mb-16">
-            <h2 className="section-title-ultra">A Fundação</h2>
+            <h2 className="section-title-ultra">A Nossa História</h2>
+            <p className="text-gray-600 text-sm font-sans mt-2">Do Directivo Ultras XXI ao núcleo do Algarve</p>
+            <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
+          </div>
+          <div className="relative">
+            <div className="timeline-line-ultra" />
+            <div className="space-y-12">
+              {claqueTimeline.map((item, index) => (
+                <div key={item.year} className={`timeline-card-ultra ${index % 2 === 0 ? "timeline-card-left-ultra" : "timeline-card-right-ultra"}`}>
+                  <div className="timeline-dot-ultra" />
+                  <div className="card-ultra-hover p-6 ml-4 md:ml-0">
+                    <span className="badge-ultra-green mb-3">{item.year}</span>
+                    <h3 className="text-xl font-heading font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-gray-500 text-sm font-sans">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comunicado de Fundação */}
+      <section className="py-20 bg-ultra-dark">
+        <div className="container-ultra-narrow">
+          <div className="text-center mb-16">
+            <h2 className="section-title-ultra">Comunicado de Fundação</h2>
             <p className="text-gray-600 text-sm font-sans mt-2">17 de Maio de 2002 — O nascimento do Directivo Ultras XXI</p>
             <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
           </div>
@@ -144,7 +174,7 @@ export default function SobrePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-ultra-dark border-t border-ultra-gray text-center">
+      <section className="py-20 bg-black border-t border-ultra-gray text-center">
         <div className="container-ultra-narrow">
           <h2 className="text-4xl md:text-5xl font-heading font-black text-white uppercase tracking-tight mb-4">
             Queres Fazer Parte?

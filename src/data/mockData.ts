@@ -7,13 +7,12 @@ import { Match, NewsArticle, Player, Standing, Modality } from "@/types";
 
 // ---- CLAQUE DATA ----
 export const claqueTimeline = [
-  { year: 2019, title: "Fundação da Directivo Algarve", description: "Um grupo de amigos sportinguistas do Algarve decide criar uma claque oficial para apoiar o Sporting CP nas deslocações ao sul do país." },
-  { year: 2020, title: "Primeira deslocação em grupo", description: "Organizamos a primeira viagem oficial para apoiar o Sporting no Estádio do Algarve, com mais de 50 membros." },
-  { year: 2021, title: "Reconhecimento oficial", description: "O Directivo Algarve é reconhecido como claque oficial do Sporting Clube de Portugal pela direção do clube." },
-  { year: 2022, title: "Expansão para todo o Algarve", description: "A claque expande a sua presença para todos os concelhos do Algarve, com núcleos em Faro, Portimão, Albufeira e Olhão." },
-  { year: 2023, title: "100 membros ativos", description: "Atingimos a marca de 100 sócios ativos, consolidando-nos como a maior claque sportinguista do sul do país." },
-  { year: 2024, title: "Deslocações nacionais e internacionais", description: "Organizamos deslocações para todos os estádios nacionais e acompanhamos o Sporting na Champions League." },
-  { year: 2025, title: "Novos projetos e comunidade", description: "Lançamos iniciativas solidárias, convívios mensais e reforçamos a presença digital da claque." },
+  { year: 2002, title: "Fundação do Directivo Ultras XXI", description: "A 17 de maio de 2002 nasce o Directivo Ultras XXI (DUXXI). O grupo começa no topo Norte do antigo Estádio José Alvalade, deslocando-se mais tarde para o sector A18 do topo Sul do novo estádio." },
+  { year: 2010, title: "Nascimento do núcleo do Algarve", description: "No início da década de 2010, sportinguistas do Algarve com ligação ao DUXXI começam a organizar-se como núcleo regional. O Directivo Algarve dá os primeiros passos como polo de apoio no sul do país." },
+  { year: 2019, title: "Estruturação do Directivo Algarve", description: "O núcleo algarvio consolida-se como referência regional, organizando deslocações regulares a Alvalade e a todo o país. A presença nos jogos do Sporting no Algarve torna-se constante." },
+  { year: 2022, title: "Expansão e presença nacional", description: "O Directivo Algarve marca presença em todos os estádios nacionais e começa a acompanhar o Sporting nas competições europeias. O núcleo torna-se um dos polos mais ativos do DUXXI." },
+  { year: 2024, title: "Presença internacional", description: "Acompanhamos o Sporting na Champions League e em deslocações internacionais. O núcleo algarvio continua a crescer e a afirmar-se como a extensão sul da família ultra leonina." },
+  { year: 2025, title: "Fortalecimento e comunidade", description: "O Directivo Algarve reforça a sua presença digital, organiza ações de solidariedade social e continua a ser o principal motor da mobilização sportinguista na região sul." },
 ];
 
 export const claqueStats = [
@@ -31,14 +30,6 @@ export const claqueBenefits = [
   { title: "GRUPO EXCLUSIVO", description: "Acesso ao grupo privado de WhatsApp e redes sociais da claque. Onde a verdadeira comunicação acontece." },
 ];
 
-export const claqueLeaders = [
-  { name: "João Silva", role: "Presidente", photo: "" },
-  { name: "Rui Santos", role: "Vice-Presidente", photo: "" },
-  { name: "Ana Martins", role: "Tesoureira", photo: "" },
-  { name: "Pedro Costa", role: "Secretário", photo: "" },
-  { name: "Marta Ferreira", role: "Logística e Deslocações", photo: "" },
-  { name: "Carlos Pereira", role: "Comunicação e Redes", photo: "" },
-];
 
 // ---- GALLERY ----
 export const galleryAlbums = [
