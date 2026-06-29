@@ -285,31 +285,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ============================
-          LATEST RESULTS — ULTRA
-          ============================ */}
-      <section className="py-20 bg-ultra-dark">
-        <div className="container-ultra">
-          <div className="text-center mb-16">
-            <span className="badge-ultra-red mb-4">ÚLTIMOS RESULTADOS</span>
-            <h2 className="section-title-ultra">Últimos Jogos do Sporting</h2>
-            <div className="flex justify-center mt-6"><div className="section-divider-ultra" /></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {recentResults.map((match) => (
-              <div key={match.id} className="match-card-ultra">
-                <span className="badge-ultra-gray text-[10px] mb-4">{match.competition}</span>
-                <div className="grid grid-cols-3 gap-3 items-center w-full mb-4">
-                  <p className="match-team-ultra">{match.homeTeam}</p>
-                  <div className="match-score-ultra">{match.homeScore} - {match.awayScore}</div>
-                  <p className="match-team-ultra">{match.awayTeam}</p>
-                </div>
-                <p className="match-time-ultra">{formatDateShort(match.date)} • {formatTime(match.time)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
