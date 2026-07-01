@@ -8,8 +8,6 @@
    Ligada ao Directivo Ultras XXI
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap");
-
 @layer base {
   :root {
     --ultra-black: #000000;
@@ -28,12 +26,14 @@
   }
 
   body {
-    @apply bg-black text-gray-300 font-sans antialiased;
+    @apply bg-black text-gray-300 antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
     background-color: #000000;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-white;
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    @apply text-white;
   }
 
   ::selection {
@@ -53,6 +53,11 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #00FF66;
+  }
+
+  /* Focus visible for keyboard navigation */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ultra-green-bright;
   }
 }
 
@@ -301,5 +306,43 @@
   /* ---- SKELETON ---- */
   .skeleton-ultra {
     @apply bg-ultra-gray animate-pulse;
+  }
+
+  /* ---- NEWSLETTER ---- */
+  .newsletter-input-ultra {
+    @apply flex-1 px-4 py-3.5 bg-ultra-dark border border-ultra-gray text-white 
+           focus:border-ultra-green focus:ring-0 outline-none transition-colors duration-200
+           placeholder:text-gray-600 text-sm font-sans;
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up-delay-1 {
+    animation: fade-in-up 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-2 {
+    animation: fade-in-up 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-3 {
+    animation: fade-in-up 0.6s ease-out 0.3s forwards;
+    opacity: 0;
   }
 }

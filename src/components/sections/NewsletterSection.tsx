@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { cn } from "@/lib/utils";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -12,68 +11,68 @@ export default function NewsletterSection() {
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
 
     setStatus("loading");
-
-    // Simulate subscription (in production, integrate with Mailchimp/SendGrid)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Success
-    setStatus("success");
-    setEmail("");
-
-    // Reset after 3 seconds
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
     setTimeout(() => setStatus("idle"), 3000);
   };
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-sporting-green via-sporting-green to-sporting-dark" />
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-sporting-green-light rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative z-10 container-sporting">
+    <section className="relative py-16 md:py-20 overflow-hidden bg-black border-t border-b border-ultra-gray">
+      <div className="absolute inset-0 ultra-stripe opacity-20" />
+      <div className="container-ultra relative z-10">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="text-5xl mb-6">📧</div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-3">
+          <div className="w-16 h-16 border-2 border-ultra-green flex items-center justify-center mx-auto mb-6">
+            <span className="text-2xl font-heading font-black text-ultra-green-bright">@</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white uppercase tracking-tight mb-3">
             Fica por dentro de tudo
           </h2>
-          <p className="text-white/80 mb-8 text-lg">
-            Subscreve a newsletter e recebe as últimas notícias do Sporting CP
-            diretamente no teu email.
+          <p className="text-gray-500 font-sans mb-8">
+            Subscreve a newsletter e recebe as últimas novidades da Directivo Algarve.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <div className="flex-1 relative">
+            <div className="flex-1">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="O teu email..."
-                className={cn(
-                  "w-full px-5 py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200",
-                  status === "success" && "ring-2 ring-green-400"
-                )}
+                className="form-input-ultra"
                 disabled={status === "loading" || status === "success"}
                 required
+                aria-label="Email para newsletter"
               />
             </div>
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}
-              className={cn(
-                "px-6 py-3.5 rounded-xl font-semibold transition-all duration-200 whitespace-nowrap",
-                status === "success"
-                  ? "bg-green-500 text-white"
-                  : "bg-white text-sporting-green hover:bg-gray-100 hover:shadow-xl"
-              )}
+              className="btn-ultra glow-green-hover disabled:opacity-50"
             >
-              {status === "loading" ? "⏳" : status === "success" ? "✅ Subscrito!" : "📩 Subscrever"}
+              {status === "loading" ? "..." : status === "success" ? "✅ Subscrito!" : "Subscrever"}
             </button>
           </form>
 
-          <p className="text-white/50 text-xs mt-4">
-            Ao subscreveres, aceitas receber emails do Sporting CP.
+          {status === "error" && (
+            <p className="text-ultra-red text-xs mt-4 font-heading font-semibold uppercase tracking-wider">
+              Erro ao subscrever. Tenta novamente.
+            </p>
+          )}
+
+          <p className="text-gray-700 text-[10px] mt-4 font-heading font-semibold uppercase tracking-wider">
             Podes cancelar a qualquer momento.
           </p>
         </div>

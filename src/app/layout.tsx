@@ -1,9 +1,26 @@
 import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import { siteUrl, siteLogoPng, siteOgImage, claqueInfo } from "@/lib/site-config";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-poppins",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: {
@@ -27,6 +44,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: claqueInfo.fullName }],
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      "pt-PT": siteUrl,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "pt_PT",
@@ -44,13 +67,28 @@ export const metadata: Metadata = {
     description: "Directivo Algarve — Claque ultra do Sporting CP no Algarve.",
     images: [siteOgImage],
   },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  other: {
+    "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
+  },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#000000",
+  colorScheme: "dark" as const,
 };
 
 const jsonLd = {
@@ -66,22 +104,44 @@ const jsonLd = {
   sport: "Football (Soccer)",
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Início", item: siteUrl },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-PT" className="bg-black">
+    <html lang="pt-PT" className={`bg-black ${inter.variable} ${poppins.variable}`}>
       <head>
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo-maskable.png" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="color-scheme" content="dark" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <Script id="json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(jsonLd)}
         </Script>
+        <Script id="breadcrumb-json-ld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(breadcrumbJsonLd)}
+        </Script>
       </head>
       <body className="bg-black text-gray-300 font-sans antialiased">
+        {/* Skip to content - Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-ultra-green focus:text-white focus:font-heading focus:font-bold focus:text-sm focus:uppercase focus:tracking-wider"
+        >
+          Saltar para o conteúdo
+        </a>
+
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen" role="main">
+          {children}
+        </main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
